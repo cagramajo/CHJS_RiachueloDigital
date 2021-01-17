@@ -1,0 +1,198 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: "Fredoka One";
+    text-decoration-color: #625255;
+    letter-spacing: 2px;
+    color: #625255;
+}
+
+header{
+    background-color: #74D14C;
+    width: 100%;
+}
+
+header div {
+    margin: auto;
+    width: 75%;
+}
+
+header h1{
+    font-size: 500%;
+    color: #591259;
+    position: absolute;
+    display: inline-block;
+    padding: 50px 0;
+}
+
+header ul{
+    text-align: right;
+    list-style-type: none;
+    overflow: hidden;
+    margin: auto;
+    width: 75%;
+}
+
+header ul li{
+    display: inline-block;   
+}
+
+header ul li a{
+    text-decoration: none;
+    display: inline-block;
+    color: #6b9150;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+header ul li a:hover{
+    background-color: #625255;
+}
+
+header ul li a.active{
+    background-color: #625255;
+}
+
+header ul ul{
+    display: none;
+    position: absolute;
+    text-align: left;
+}
+
+header ul ul li{
+    display: block;
+}
+
+header ul li:hover ul{
+    display: block;
+}
+
+main{
+    text-align: center;
+    margin: auto;
+    width: 75%;
+}
+
+main section img.mapa{
+    width: 100%;
+    height: 100%;
+}
+
+main section h2 {
+    text-align: center;
+    font-size: 250%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+main section article h3{
+    text-align: center;
+    font-size: 300%;
+    text-transform: capitalize;    
+}
+
+main section article p, main section p{
+    line-height: 1.6;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer{
+    background-color: #74D14C;
+    color: #591259;
+}
+
+footer h3{
+    text-align: center;
+}
+
+/* Fexbox aplicados a la seccion contacto*/
+
+main.contacto {
+    width: 50%;
+}
+
+form{
+    text-align: left;
+}
+
+form p {
+    margin: 1em 1em 1em 0em;
+}
+
+form ul{
+    list-style: none;
+}
+
+form ul li{
+    display: flex;
+    flex-direction: row;
+    padding: 0.7em 3.5em;
+}
+
+form ul li > label{
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+form ul li > input{
+    flex: 2;
+}
+
+form ul li > textarea{
+    flex: 2;
+}
+
+form ul li > select{
+    flex: 2;
+}
+
+form ul li .button{
+    margin: 3.5em;
+}
+
+/*Flexbox en la seccion de articulos del index*/
+
+main section.articulos{
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+main section article{
+    flex: 1;
+}
+
+/*Flexbox en footer */
+
+footer div{
+    margin: auto;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+footer div section{
+    flex: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul li{
+    display: inline;
+}

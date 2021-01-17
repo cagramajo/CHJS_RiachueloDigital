@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Villa Riachuelo, CABA, Pequeño Comercio">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css_propio/estilosNuevos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Riachuelo Digital - Contacto</title>
+    <meta name="description" content="Encontra los pequeños comercios del barrio Villa Riachuelo en Capital Federal">
+</head>
+<body class="container background">
+    <header class="header">
+        <div class="row header__logoName">
+            <img src="../images/riachuelo_digital_logo_6_200px.png">
+            <h1 class="display-1 ocultatTitulo">Riachuelo Digital</h1>
+        </div>
+        
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <!-- Brand -->
+            <a class="titulo navbar-brand header__menu__companyName" href="#">Riachuelo Digital</a>   
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon header__menu__TogglerIcon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse header__menu" id="collapsibleNavbar">
+                <ul class="navbar-nav header__menu_link">
+                    <li class="nav-item">
+                        <a class="nav-link header__menu_link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header__menu_link" href="iniciativa.html">La Iniciativa</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle header__menu_link" href="comercios.html" id="navbardrop" data-toggle="dropdown">Los Comercios</a>
+                        <div class="dropdown-menu header__menu__dropDownMenu_background">
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="comercios/almacenes.html">Almacenes</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="comercios/panaderias.html">Panaderias</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="comercios/verdulerias.html">Verdulerias</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="comercios/ferreterias.html">Ferreterias</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="comercios/otros.html">Otros Comercios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header__menu_link" href="contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contacto">
+        <section>
+            <h2>Contactanos</h2>
+            <p>Queres formar parte de esta iniciativa, dejanos tus datos y nos pondremos en contacto con vos.
+                <br>
+                Gracias por llegar hasta aqui! 
+            </p>
+        </section>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Sobre tu comercio o empredimiento</label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputNombreFantasia">Nombre de Fantasía</label>
+                    <input type="text" class="form-control" id="inputNombreFantasia">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputRubro">Rubro</label>
+                    <input type="text" class="form-control" id="inputRubro">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Tus Datos</label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputApellido">Apellido</label>
+                    <input type="text" class="form-control" id="inputApellido">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputContacto">¿Como nos conociste?</label>
+                    <select id="inputContacto" class="form-control">
+                        <option selected>Redes Sociales</option>
+                        <option>Por un vecino</option>
+                        <option>Por mi comerciante</option>
+                        <option>Diarios y Revistas</option>
+                        <option>Otros Medios</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        ¿Queres recibir noticias nuestras?
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Dejanos tu comentario</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="reset" class="btn btn-secondary">Limpiar datos</button>
+            </div>
+        </form>        
+    </main>
+
+    <footer>
+        <div class="row">
+            <section class="col-md-6" >
+                <h3 class="text-center">Riachuelo Digital - Contactanos</h3>
+                <ul class="footer__elemento">
+                    <li class="footer__elemento__item"><img src="../images/telefono_48px.png"></li>
+                    <li class="footer__elemento__item">+549 11 4999 9999</li>
+                </ul>
+                <ul class="footer__elemento">
+                    <li class="footer__elemento__item"><img src="../images/mail_48px.png"></li>
+                    <li class="footer__elemento__item">contacto@luganodigital.com.ar</li>
+                </ul>
+            </section>
+            <section class="col-md-6">
+                <h3 class="text-center">Nuestras Redes</h3>
+                <ul class="footer__elemento footer__elemento__item--redes">
+                    <li class="footer__elemento__item"><img src="../images/instagram_48px.png" title="Instagram"></li>
+                    <li class="footer__elemento__item"><img src="../images/facebook_letra_48px.png" title="Facebook"></li>
+                    <li class="footer__elemento__item"><img src="../images/pinteres_48px.png" title="Pinteres"></li>
+                </ul>
+            </section>
+        </div>
+    </footer>
+    <!--Requerido por bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

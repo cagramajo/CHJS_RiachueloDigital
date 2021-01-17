@@ -1,0 +1,107 @@
+
+/** Estilo del header **/
+/*
+div.subMenu{
+    background-color: transparent;
+    border: none;
+}
+
+a:hover{
+    background-color: #9DE580;
+    color: #591259;
+}
+*/
+/** Sobreescribiendo algunas propiedades de bootstrap**/
+
+/* .navbar-dark .navbar-brand{
+    color: #591259;
+    font-size: x-large;
+} 
+
+.navbar-dark .navbar-toggler-icon{
+    background-image: url(../images/menu_48px.png);
+}
+
+.navbar-dark .navbar-nav .   {
+    color: #591259;
+    font-size: large;
+}
+
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #591259;
+
+}
+
+.navbar-dark .navbar-brand:hover {
+    background-color: #9DE580;
+    color: #591259;
+}
+
+
+.dropdown-item {
+    color: #591259;
+}
+
+.dropdown-item:hover {
+    background-color: #9DE580;
+    color: #591259;
+}
+
+
+.navbar-dark .navbar-nav .show>.nav-link{
+    background-color: #9DE580;
+    color: #591259;
+}
+
+/**Estilos main **/
+/*
+h2{
+    margin-top: .7em;
+    font-size: 2.5rem;
+    color: #591259;
+}
+
+section{
+    margin-bottom: 1em;
+}
+
+p{
+    margin-top: 1em;
+    color: #591259;
+}
+
+h3{
+    margin-top: .7em;
+    color: #591259;
+}
+
+/*
+footer ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+footer ul li{
+    display: inline;
+    padding: 1vh;
+}
+
+footer ul.redes{
+    justify-content: center;
+    padding: 3vh;
+}
+
+@media (min-width: 768px){
+
+    .titulo{
+        visibility: hidden;;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .ocultatTitulo{
+        display: none;
+    }
+}

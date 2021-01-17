@@ -1,0 +1,249 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: "Fredoka One";
+    text-decoration-color: #625255;
+    letter-spacing: 2px;
+    color: #625255;
+    display: grid;
+    grid-template-areas:  
+        "header header header header"
+        ". main main ."
+        "footer footer footer footer";
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    
+
+    background-image: linear-gradient(to bottom, 
+        #00a896, 
+        #53b796, 
+        #7dc599, 
+        #a2d39f, 
+        #c5e1a9, 
+        #c5e1a9, 
+        #c5e1a9, 
+        #c5e1a9, 
+        #a2d39f, 
+        #7dc599, 
+        #53b796, 
+        #00a896);
+}
+
+/** Estilo del header **/
+header{
+    /*background-color: #74D14C;*/
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    color: #591259;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1{
+    font-size: 9vh;
+}
+
+/** Estilos de la barra de navegacion **/
+header nav{
+    display: flex;
+}
+
+header nav ul{
+    list-style-type: none;
+    overflow: hidden;
+    margin: auto;
+}
+
+header ul li{
+    display: inline-block;   
+}
+
+header ul li a{
+    text-decoration: none;
+    display: inline-block;
+    color: #6b9150;
+    text-align: center;
+    padding: 1.5vh 1.5vh;
+}
+
+header ul li a:hover{
+    background-color: #625255;
+}
+
+header ul li a.active{
+    background-color: #625255;
+}
+
+header ul ul{
+    display: none;
+    position: absolute;
+    text-align: left;
+}
+
+header ul ul li{
+    display: block;
+}
+
+header ul li:hover ul{
+    display: block;
+}
+
+/** Estilo del Main **/
+main{
+    grid-area: main;
+}
+
+main section img.mapa{
+    width: 100%;
+    height: 100%;
+}
+
+main section h2 {
+    text-align: center;
+    font-size: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+main section article{
+    flex:1;
+    margin: 2vh 2vh 2vh 2vh;
+    padding: 2vh 2vh 2vh 2vh;
+}
+
+main section article h3{
+    text-align: center;
+    font-size: 4vh;
+    text-transform: capitalize;    
+}
+
+main section article p, main section p{
+    line-height: 1.6;
+    letter-spacing: 0.5vh;
+    word-spacing: 1vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+main section article div{
+    display: flex;
+    justify-content: center;
+}
+
+/** Estilo del footer **/
+footer{
+    /*background-color: #74D14C;*/
+    color: #591259;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+}
+
+footer div{
+    margin: auto;
+    width: 75%;
+    display: flex;
+}
+
+footer div section{
+    flex: 1;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+footer div section h3{
+    text-align: center;
+    font-size: 2.5vh;
+}
+footer ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul.redes{
+    justify-content: center;
+    padding: 3vh;
+}
+
+footer ul li{
+    display: inline;
+    padding: 1vh;
+}
+
+/* Fexbox aplicados en el formulario de contacto*/
+form p {
+    margin: 1em 1em 1em 0em;
+}
+
+form ul{
+    list-style: none;
+}
+
+form ul li{
+    display: flex;
+    flex-direction: row;
+    padding: 0.7em 3.5em;
+}
+
+form ul li > label{
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+form ul li > input{
+    flex: 2;
+}
+
+form ul li > textarea{
+    flex: 2;
+}
+
+form ul li > select{
+    flex: 2;
+}
+
+form ul li .button{
+    margin: 3.5em;
+}
+
+/* Estilos aplicados a la seccion comercios y home */
+
+main section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main section div, main section article {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section div h4 {
+    text-align: center;
+    font-size: 4vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+figure{
+    transition: .5s;
+}
+
+figure:hover {
+    transform: scale(1.5);
+    transition: .5s;
+}

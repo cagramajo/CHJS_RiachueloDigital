@@ -1,0 +1,27 @@
+@import "estructura";
+@import "media";
+
+
+h2{
+    margin-top: .7em;
+    font-size: 2.5rem;
+    color: $textColor;
+}
+
+section{
+    margin-bottom: 1em;
+}
+
+p{
+    margin-top: 1em;
+    color: $textColor;
+}
+
+h3{
+    margin-top: .7em;
+    color: $textColor;
+}
+
+h5 {
+    color: $textColor;
+}

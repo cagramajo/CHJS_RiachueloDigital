@@ -1,0 +1,74 @@
+.background {
+  font-family: "Fredoka One";
+  background-image: linear-gradient(to bottom, #00a896, #53b796, #7dc599, #a2d39f, #c5e1a9, #c5e1a9, #c5e1a9, #c5e1a9, #a2d39f, #7dc599, #53b796, #00a896); }
+
+.header {
+  color: #591259; }
+
+.header__logoName {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.header__menu {
+  justify-content: flex-end; }
+
+.header__menu__companyName {
+  color: #591259 !important; }
+
+.header__menu__dropDownMenu_background {
+  background-color: transparent;
+  border: none; }
+
+.header__menu__dropDownMenu_item {
+  color: #591259; }
+
+.header__menu_link {
+  color: #591259 !important;
+  font-size: large !important; }
+
+.navbar-toggler-icon {
+  background-image: url(../images/menu_48px.png) !important; }
+
+a:hover {
+  background-color: #9DE580 !important;
+  color: #591259 !important; }
+
+.footer__elemento {
+  list-style-type: none;
+  display: flex;
+  align-items: center; }
+
+.footer__elemento__item {
+  padding: 0 1vh 0 0; }
+
+.footer__elemento__item--redes {
+  justify-content: center;
+  padding: 3vh; }
+
+@media (min-width: 768px) {
+  .titulo {
+    visibility: hidden; } }
+
+@media screen and (max-width: 768px) {
+  .ocultatTitulo {
+    display: none; } }
+
+h2 {
+  margin-top: .7em;
+  font-size: 2.5rem;
+  color: #591259; }
+
+section {
+  margin-bottom: 1em; }
+
+p {
+  margin-top: 1em;
+  color: #591259; }
+
+h3 {
+  margin-top: .7em;
+  color: #591259; }
+
+h5 {
+  color: #591259; }
