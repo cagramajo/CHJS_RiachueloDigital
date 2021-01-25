@@ -3,64 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css_propio/estilos_old.css">
+    <meta name="keywords" content="Villa Riachuelo, CABA, Pequeño Comercio">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css_propio/estilosNuevos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <title>Riachuelo Digital - Comercios - Almacenes</title>
+    <meta name="description" content="Encontra los almacenes del barrio Villa Riachuelo en Capital Federal">
 </head>
-<body>
-    <header>
-        <div>
+<body class="container background">
+    <header class="header">
+        <div class="row header__logoName">
             <img src="../../images/riachuelo_digital_logo_6_200px.png">
-            <h1>Riachuelo Digital</h1>   
+            <h1 class="display-1 ocultatTitulo">Riachuelo Digital</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../iniciativa.html">La Iniciativa</a></li>
-                <li><a class="active" href="../comercios.html">Los Comercios</a>
-                    <ul>
-                        <li><a href="../comercios/almacenes.html">Almacenes</a></li>
-                        <li><a href="../comercios/panaderias.html">Panaderias</a></li>
-                        <li><a href="../comercios/verdulerias.html">Verdulerias</a></li>
-                        <li><a href="../comercios/ferreterias.html">Ferreterias</a></li>
-                        <li><a href="../comercios/otros.html">Otros Comercios</a></li>
-                    </ul>
-                </li>
-                <li><a href="../contacto.html">Contactanos</a></li>
-            </ul>
+
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <!-- Brand -->
+            <a class="titulo navbar-brand header__menu__companyName" href="#">Riachuelo Digital</a>   
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon header__menu__TogglerIcon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse header__menu" id="collapsibleNavbar">
+                <ul class="navbar-nav header__menu_link">
+                    <li class="nav-item">
+                        <a class="nav-link header__menu_link" href="../../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header__menu_link" href="../iniciativa.html">La Iniciativa</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle header__menu_link" href="../comercios.html" id="navbardrop" data-toggle="dropdown">Los Comercios</a>
+                        <div class="dropdown-menu header__menu__dropDownMenu_background">
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="../comercios/almacenes.html">Almacenes</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="../comercios/panaderias.html">Panaderias</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="../comercios/verdulerias.html">Verdulerias</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="../comercios/ferreterias.html">Ferreterias</a>
+                            <a class="dropdown-item header__menu__dropDownMenu_item" href="../comercios/otros.html">Otros Comercios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header__menu_link" href="../contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        
     </header>
 
     <main>
         <h3>Almacenes</h3>
         <p></p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur labore ullam in ab nesciunt! Velit, harum. Animi eum sit laborum iusto, aliquid repellat explicabo atque unde commodi vitae fugiat nesciunt!</p>
+        <p>Agrupamos a todos los comercios que se dediquen como principal actividad al comercio de articulos comestibles, bebidas y limpieza. Si si, vas a encontrar a todos los que te salvan cuando queres cocinar algo rico</p>
     </main>
 
     <footer>
-        <div>
-            <section>
-                <h3>Riachuelo Digital - Contactanos</h3>
-                <ul>
-                    <li><img src="../../images/telefono_48px.png"></li>
-                    <li>+549 11 4999 9999</li>
+        <div class="row">
+            <section class="col-md-6" >
+                <h3 class="text-center">Riachuelo Digital - Contactanos</h3>
+                <ul class="footer__elemento">
+                    <li class="footer__elemento__item"><img src="../../images/telefono_48px.png"></li>
+                    <li class="footer__elemento__item">+549 11 4999 9999</li>
                 </ul>
-                <ul>
-                    <li><img src="../../images/mail_48px.png"></li>
-                    <li>contacto@luganodigital.com.ar</li>
+                <ul class="footer__elemento">
+                    <li class="footer__elemento__item"><img src="../../images/mail_48px.png"></li>
+                    <li class="footer__elemento__item">contacto@luganodigital.com.ar</li>
                 </ul>
             </section>
-            <section>
-                <h3>Nuestras Redes</h3>
-                <ul class="redes">
-                    <li><img src="../../images/instagram_48px.png" title="Instagram"></li>
-                    <li><img src="../../images/facebook_letra_48px.png" title="Facebook"></li>
-                    <li><img src="../../images/pinteres_48px.png" title="Pinteres"></li>
+            <section class="col-md-6">
+                <h3 class="text-center">Nuestras Redes</h3>
+                <ul class="footer__elemento footer__elemento__item--redes">
+                    <li class="footer__elemento__item"><img src="../../images/instagram_48px.png" title="Instagram"></li>
+                    <li class="footer__elemento__item"><img src="../../images/facebook_letra_48px.png" title="Facebook"></li>
+                    <li class="footer__elemento__item"><img src="../../images/pinteres_48px.png" title="Pinteres"></li>
                 </ul>
             </section>
         </div>
     </footer>
+    <!--Requerido por bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 </body>
 </html>

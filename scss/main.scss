@@ -26,7 +26,12 @@ h5 {
     color: $textColor;
 }
 
-.carouselExampleSlidesOnly img{
-    width: 100%;
-    height: auto;
+.img-fluid{
+    margin: auto;
+}
+
+.carousel-caption {
+    position: relative;
+    left: 0;
+    top: 0;
 }
