@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="../css/estilosNuevos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <title>Riachuelo Digital - Los comercios</title>
+
+    <!-- Script call -->
+    <script src="../js/class/class-advertising.js"></script>
+    <script src="../js/class/class-campaignType.js"></script>
+    <script src="../js/class/class-campaign.js"></script>
+    <script src="../js/class/class-seller.js"></script>
+    <script src="../js/class/class-contract.js"></script>
+    <script src="../js/function.js"></script>
+    <script src="../js/screenComponents/campaingTypeComponent.js"></script>
+    <script src="../js/screen/quoteScreen.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <title>Riachuelo Digital - Cotizador</title>
     <meta name="description" content="Encontra los pequeños comercios del barrio Villa Riachuelo en Capital Federal">
 </head>
 <body class="container background">
@@ -56,65 +69,18 @@
             </div>
         </nav>
     </header>
-
-    <main>        
+    <main id="mainCotizador">
+        <!--Aqui armamos nuestro form de cotizador-->
         <section>
-            <article>
-                <h2>Los Comercios</h2>
-                <p>
-                    Categorizamos los comercios que se suman a Riachuelo dígital; para que te resulte mas facil y practico encontrarlos de acuerdo a tu interes
-                </p>
-            </article>
-        </section>
-        <section class="row">
-            <div class="col-md-6">
-                <a href="comercios/almacenes.html">
-                    <figure>
-                        <img src="../images/almacen_96px.png" alt="Almacen" title="Almacenes">
-                    </figure>
-                    </a>
-                <h4>Almacenes</h4>
-                <p>Agrupamos a todos los comercios que se dediquen como principal actividad al comercio de articulos comestibles, bebidas y limpieza. Si si, vas a encontrar a todos los que te salvan cuando queres cocinar algo rico</p>
-            </div>
-            <div class="col-md-6">
-                <a href="comercios/panaderias.html">
-                    <figure>
-                        <img src="../images/panaderia_96px.png" alt="Pnaderia" title="Panaderias">
-                    </figure>
-                </a>
-                <h4>Panaderias</h4>
-                <p>Aquí vas a encontrar a los negocios que hacen esas cosas ricas con las que desayunamos o nos tomamos unos mates y que nos hacen la segunda cuando queremos festejar algun evento, trayendonos tortas o pequeños bocaditos delces y saldos</p>
-            </div>
-            <div class="col-md-6">
-                <a href="comercios/verdulerias.html">
-                    <figure>
-                        <img src="../images/verduleria_96px.png" alt="Verduleria" title="Verdulerias">
-                    </figure>
-                    </a>
-                <h4>Verdulerias</h4>
-                <p>Encontra a esos comerciantes que nos ayudan a comer sano y natural</p>
-            </div>
-            <div class="col-md-6">
-                <a href="comercios/ferreterias.html">
-                    <figure>    
-                        <img src="../images/ferreteria_96px.png" alt="ferreteria" title="Ferreterias">
-                    </figure>
-                    </a>
-                <h4>Ferreterias</h4>
-                <p>Los que te salvan cuando queres hacer esos pequeños arreglos en casa y necesitas ese cosito!</p>
-            </div>
-            <div class="col-md-6">
-                <a href="comercios/otros.html">
-                    <figure>
-                        <img src="../images/emprendedor_96px.png" alt="Pequenos comercios" title="Pequenos Comercios">
-                    </figure>
-                    </a>
-                <h4>Otros Negocios y Emprendimientos</h4>
-                <p>Encontra a todos esos pequeños comercios que pueden ayudarte en todo lo que estas necesitando; un mimo propio, un agasajo o simplemente ayuda de especialistas</p>
-            </div>
+            <h2>Cotizador</h2>
+            <p>
+                Contanos que tipo de campania publicitaria deseas y te presupuestamos en linea.
+            </p>
+            <form>
+                <button type="button" class="btn btn-primary" onclick="iniciarCotizacion()">Cotiza Ahora</button>
+            </form>
         </section>
     </main>
-
     <footer>
         <div class="row">
             <section class="col-md-6" >
