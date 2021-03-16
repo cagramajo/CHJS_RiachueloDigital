@@ -5,14 +5,17 @@ var campaignTypeSelector = document.createElement("select");
 
 function campaignTypeComponentLoad(optionsCampaign){
 
-    //console.log(optionsCampaign);
-    campaignTypeDiv.setAttribute("class", "form-group col-md-6");
+    //Div
+    campaignTypeDiv.setAttribute("class", "col");
+    //Lavel
     campaignTypeSlectorLabel.setAttribute("for", "campaignTypeSelector");
     campaignTypeSlectorLabel.innerHTML = "Selecciona el Tipo de campania";
     campaignTypeDiv.appendChild(campaignTypeSlectorLabel);
+    //Select
     campaignTypeSelector.setAttribute("id", "campaignType");
     campaignTypeSelector.setAttribute("class", "form-control");
     for (let index = 0; index < optionsCampaign.length; index++) {
+        //option
         var optionCampaignType = document.createElement("option");
         optionCampaignType.innerHTML = optionsCampaign[index];
         campaignTypeSelector.add(optionCampaignType);
