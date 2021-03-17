@@ -1,23 +1,55 @@
-var optionsCampaignList = ["Opcion 1", "Opcion 2"];
-var formQuote = document.createElement("form");
-var mainSection;
-var campaignTypeComponent1;
+var optionsCampaignList = [];
+var optionsAdvertingList = [];
+var optionsDurationList = [];
+var optionsFrecuencyList = [];
+var quoteForm;
+var campaignTypeComponentScreen;
+var advertisingComponentScreen;
+var durationComponentScreen;
 
-function quoteScreenLoad(campaignTypeParameterArray){
-    optionsCampaignList = getNameCampaignList(campaignTypeParameterArray);
-    mainSection = document.getElementById("mainCotizador");
-    campaignTypeComponent1 = campaignTypeComponentLoad(optionsCampaignList);
-    console.log(campaignTypeComponent1);
-    formQuote.appendChild(campaignTypeComponent1);
-    mainSection.appendChild(formQuote);
+function quoteScreenLoad(campaignTypeArray, advertisingArray){
+    quoteForm = document.getElementById("quoteForm")
+
+    //Ocultamos boton "Cotizar Ahora"
+    var hiddenBtn = document.getElementById("startQuoteBtn");
+    quoteForm.removeChild(hiddenBtn);
+
+    // Cargamos La sección tipo de Campaña
+    optionsCampaignList = getNameCampaignList(campaignTypeArray);
+    campaignTypeComponentScreen = campaignTypeComponentLoad(optionsCampaignList);
+    quoteForm.appendChild(campaignTypeComponentScreen);
+
+    // Cargamos la sección Publicidades
+    //optionsAdvertingList = getNameAdvertisingList(advertisingArray);
+    advertisingComponentScreen = advertisingComponentLoad(optionsAdvertingList);
+    quoteForm.appendChild(advertisingComponentScreen);
+
+    // Cargamos la seccion Duración
+    durationComponentScreen = durationComponentLoad(optionsDurationList, optionsFrecuencyList);
+    quoteForm.appendChild(durationComponentScreen);
+
+
+    // Cargar vendedores
+
+    // Cotizar y Limpiar
 }
 
-function getNameCampaignList(campaignTypeParameterArray){
+function getNameCampaignList(campaignTypeArray){
     arrayList = [];
     elementList = "";
-    for (let index = 0; index < campaignTypeParameterArray.length; index++) {
-        elementList = campaignTypeParameterArray[index].getName();
-        arrayList.push(elementList);      
-    }
+    campaignTypeArray.forEach(element => {
+        elementList = element.getName();
+        arrayList.push(elementList);
+    });
+    return arrayList;
+}
+
+function getNameAdvertisingList(advertisingArray){
+    arrayList = [];
+    elementList = "";
+    advertisingArray.forEach(element => {
+        elementList = element.getName();
+        arrayList.push(elementList);
+    });
     return arrayList;
 }

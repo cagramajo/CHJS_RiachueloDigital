@@ -12,7 +12,7 @@ function campaignTypeComponentLoad(optionsCampaign){
     campaignTypeSlectorLabel.innerHTML = "Selecciona el Tipo de campania";
     campaignTypeDiv.appendChild(campaignTypeSlectorLabel);
     //Select
-    campaignTypeSelector.setAttribute("id", "campaignType");
+    campaignTypeSelector.setAttribute("id", "campaignTypeSelector");
     campaignTypeSelector.setAttribute("class", "form-control");
     for (let index = 0; index < optionsCampaign.length; index++) {
         //option

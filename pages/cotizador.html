@@ -16,7 +16,8 @@
     <script src="../js/class/class-seller.js"></script>
     <script src="../js/class/class-contract.js"></script>
     <script src="../js/function.js"></script>
-    <script src="../js/screenComponents/campaingTypeComponent.js"></script>
+    <script src="../js/screen/screenComponents/campaignTypeComponent.js"></script>
+    <script src="../js/screen/screenComponents/advertisingComponents.js"></script>
     <script src="../js/screen/quoteScreen.js"></script>
     <script src="../js/main.js"></script>
 
@@ -76,8 +77,8 @@
             <p>
                 Contanos que tipo de campania publicitaria deseas y te presupuestamos en linea.
             </p>
-            <form>
-                <button type="button" class="btn btn-primary" onclick="iniciarCotizacion()">Cotiza Ahora</button>
+            <form id="quoteForm">
+                <button type="button" id="startQuoteBtn" class="btn btn-primary" onclick="iniciarCotizacion()">Cotiza Ahora</button>
             </form>
         </section>
     </main>

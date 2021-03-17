@@ -54,11 +54,13 @@ var miSegmentacion = 0; // asumimos que no hay segmentacion
 var miDuracion = 0;
 var miValorPrevio = 0;
 var miContrato;
-var sellerParameterArray = [];
 var nombreVendedor = "";
 var comisionVendedor = 0;
 var idVendedorSeleccionado = 0;
+
 var campaignTypeParameterArray = [];
+var sellerParameterArray = [];
+var advertisingParameterArray = [];
 
 /**
 // Datos para el alta de vendedores
@@ -116,6 +118,7 @@ else{
 function iniciarCotizacion(){
     campaignTypeParameterArray = campaignTypeLoader();
     sellerParameterArray = sellerLoader();
-    quoteScreenLoad(campaignTypeParameterArray);
+    advertisingParameterArray = advertisingLoader(campaignTypeParameterArray);
+    quoteScreenLoad(campaignTypeParameterArray, advertisingParameterArray);
 }
 

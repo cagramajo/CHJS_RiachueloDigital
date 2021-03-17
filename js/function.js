@@ -67,7 +67,66 @@ function campaignTypeLoader(){
 }
 
 function advertisingLoader(){
+    var advertisingName = "";
+    var advertisingSocialMedia = "";
+    var advertisingCost = 0;
+    var advertisingCampaingTypeName = "";
+    var advertisingList = [];
+    var web = "Solo WEB Riachuelo Digital";
+    var webRedes = "WEB + Redes Riachiuelo Digital";
+    var redes = "Administramos tus Redes";
 
+    // Cargar publicaciones WEB
+    advertisingName = "Publicacion en web"
+    advertisingSocialMedia = "web"
+    advertisingCost = 100
+    var advertisingElementWeb = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingElementWeb.addCampaignTypeName(web);
+    advertisingList.push(advertisingElementWeb);
+
+    // Cargar publicidad Facebook
+    advertisingName = "Facebook Post"
+    advertisingSocialMedia = "Facebook"
+    advertisingCost = 500
+    var advertisingElementFBP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingElementFBP.addCampaignTypeName(webRedes);
+    advertisingElementFBP.addCampaignTypeName(redes);
+    advertisingList.push(advertisingElementFBP);
+
+    advertisingName = "Facebook Story"
+    advertisingSocialMedia = "Facebook"
+    advertisingCost = 300
+    var advertisingElementFBS = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingElementFBS.addCampaignTypeName(webRedes);
+    advertisingElementFBS.addCampaignTypeName(redes);
+    advertisingList.push(advertisingElementFBS);  
+
+    // Cargar Publicidad Instagram
+    advertisingName = "Instagram Post"
+    advertisingSocialMedia = "Instagram"
+    advertisingCost = 600
+    var advertisingElementIGP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingElementIGP.addCampaignTypeName(webRedes);
+    advertisingElementIGP.addCampaignTypeName(redes);
+    advertisingList.push(advertisingElementIGP);  
+
+    advertisingName = "Instagram Story"
+    advertisingSocialMedia = "Instagram"
+    advertisingCost = 350
+    var advertisingElementIGS = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingElementIGS.addCampaignTypeName(webRedes);
+    advertisingElementIGS.addCampaignTypeName(redes);
+    advertisingList.push(advertisingElementIGS); 
+
+    // Carga publicidad Twitter
+    advertisingName = "Twitter Post"
+    advertisingSocialMedia = "Twitter"
+    advertisingCost = 250
+    var advertisingElementTWP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingElementTWP.addCampaignTypeName(redes);
+    advertisingList.push(advertisingElementTWP); 
+
+    return advertisingList;    
 }
 
 function sellerLoader(){
