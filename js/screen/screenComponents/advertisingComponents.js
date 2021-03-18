@@ -1,9 +1,9 @@
 var advertisingComponentDiv = document.createElement("div");
-var advertisingDiv = document.createElement("div");
+var advertisingSelectorDiv = document.createElement("div")
 var advertisingSelectorLabel = document.createElement("label");
 var advertisingSelector = document.createElement("select");
-var designIncludeDiv = document.createElement("div");
-var designIncludeInputLabel = document.createElement("label");
+var designIncludeCheckDiv = document.createElement("div");
+var designIncludeCheckLabel = document.createElement("label");
 var designIncludeCheck = document.createElement("input");
 
 function advertisingComponentLoad(optionsAdverting){
@@ -11,10 +11,10 @@ function advertisingComponentLoad(optionsAdverting){
     advertisingComponentDiv.setAttribute("class", "row");
 
     //publicidad
-    advertisingDiv.setAttribute("class", "col");
+    advertisingSelectorDiv.setAttribute("class", "col");
     advertisingSelectorLabel.setAttribute("for","advertisingSelector");
     advertisingSelectorLabel.innerHTML = "Tipo de publicidad: ";
-    advertisingDiv.appendChild(advertisingSelectorLabel);
+    advertisingSelectorDiv.appendChild(advertisingSelectorLabel);
     advertisingSelector.setAttribute("id", "advertisingSelector");
     advertisingSelector.setAttribute("class", "form-control");
     optionsAdverting.forEach(element => {
@@ -22,20 +22,20 @@ function advertisingComponentLoad(optionsAdverting){
         optionAdverting.innerHTML = element;
         advertisingSelector.add(optionAdverting);
     });
-    advertisingDiv.appendChild(advertisingSelector);
-    advertisingComponentDiv.appendChild(advertisingDiv);
+    advertisingSelectorDiv.appendChild(advertisingSelector);
+    advertisingComponentDiv.appendChild(advertisingSelectorDiv);
 
     //incluye diseno
-    designIncludeDiv.setAttribute("class","col form-check");
-    designIncludeInputLabel.setAttribute("class", "form-check-label");
-    designIncludeInputLabel.setAttribute("for","designIncludeInput");
-    designIncludeInputLabel.innerHTML = "Incluye diseño";
-    designIncludeDiv.appendChild(designIncludeInputLabel);
+    designIncludeCheckDiv.setAttribute("class","col form-check");
+    designIncludeCheckLabel.setAttribute("class", "form-check-label");
+    designIncludeCheckLabel.setAttribute("for","designIncludeInput");
+    designIncludeCheckLabel.innerHTML = "Incluye diseño";
+    designIncludeCheckDiv.appendChild(designIncludeCheckLabel);
     designIncludeCheck.setAttribute("class", "form-check-input");
     designIncludeCheck.setAttribute("type", "checkbox");
     designIncludeCheck.setAttribute("id", "designIncludeInput")
-    designIncludeDiv.appendChild(designIncludeCheck);
-    advertisingComponentDiv.appendChild(designIncludeDiv);
+    designIncludeCheckDiv.appendChild(designIncludeCheck);
+    advertisingComponentDiv.appendChild(designIncludeCheckDiv);
     return advertisingComponentDiv;
 
 }

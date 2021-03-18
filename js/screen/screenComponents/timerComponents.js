@@ -1,35 +1,31 @@
 var durationComponentDiv = document.createElement("div");
-var durationDiv = document.createElement("div");
-var durationSelectorLabel = document.createElement("label");
-var durationSelector = document.createElement("select");
-var frecuencyDiv = document.createElement("div");
+var durationInputDiv = document.createElement("div");
+var durationInputLabel = document.createElement("label");
+var durationInput = document.createElement("input");
+var frecuencyChangeSelectorDiv = document.createElement("div");
 var frecuencyChangeSelectorLabel = document.createElement("label");
 var frecuencyChangeSelector = document.createElement("select");
 
-function durationComponentLoad(optionsDuration, optionsFrecuency){
+function durationComponentLoad(optionsFrecuency){
     //div general
     durationComponentDiv.setAttribute("class", "row");
 
     //duracion
-    durationDiv.setAttribute("class", "col");
-    durationSelectorLabel.setAttribute("for", "durationSelector");
-    durationSelectorLabel.innerHTML = "Duración";
-    durationDiv.appendChild(durationSelectorLabel);
-    durationSelector.setAttribute("id", "durationSelector");
-    durationSelector.setAttribute("class", "form-control");
-    optionsDuration.forEach(element => {
-        var optionDuration = document.createElement("option");
-        optionsDuration.innerHTML = element;
-        durationSelector.add(optionDuration);
-    });
-    durationDiv.appendChild(durationSelector);
-    durationComponentDiv.appendChild(durationDiv);
+    durationInputDiv.setAttribute("class", "col");
+    durationInputLabel.setAttribute("for", "durationInput");
+    durationInputLabel.innerHTML = "Duración";
+    durationInputDiv.appendChild(durationInputLabel);
+    durationInput.setAttribute("id", "durationInput");
+    durationInput.setAttribute("class", "form-control");
+    durationInput.setAttribute("type", "text");
+    durationInputDiv.appendChild(durationInput);
+    durationComponentDiv.appendChild(durationInputDiv);
 
     //frecuencia
-    frecuencyDiv.setAttribute("class", "col");
+    frecuencyChangeSelectorDiv.setAttribute("class", "col");
     frecuencyChangeSelectorLabel.setAttribute("for", "frecuencyChangeSelector");
     frecuencyChangeSelectorLabel.innerHTML = "Frecuencia";
-    frecuencyDiv.appendChild(frecuencyChangeSelectorLabel);
+    frecuencyChangeSelectorDiv.appendChild(frecuencyChangeSelectorLabel);
     frecuencyChangeSelector.setAttribute("id", "frecuencyChangeSelector");
     frecuencyChangeSelector.setAttribute("class", "form-control");
     optionsFrecuency.forEach(element => {
@@ -37,8 +33,8 @@ function durationComponentLoad(optionsDuration, optionsFrecuency){
         optionFrecuency.innerHTML = element;
         frecuencyChangeSelector.add(optionFrecuency);
     });
-    frecuencyDiv.appendChild(frecuencyChangeSelector);
-    durationComponentDiv.appendChild(frecuencyDiv);
+    frecuencyChangeSelectorDiv.appendChild(frecuencyChangeSelector);
+    durationComponentDiv.appendChild(frecuencyChangeSelectorDiv);
 
     return durationComponentDiv;
 }

@@ -5,8 +5,6 @@ var optionsFrecuencyList = [];
 var sellerList = [];
 var quoteForm;
 var campaignTypeComponentScreen;
-var advertisingComponentScreen;
-var durationComponentScreen;
 var sellerComponentScreen;
 
 function quoteScreenLoad(campaignTypeArray, advertisingArray){
@@ -29,6 +27,9 @@ function quoteScreenLoad(campaignTypeArray, advertisingArray){
     // Cargamos la seccion Duración
     durationComponentScreen = durationComponentLoad(optionsDurationList, optionsFrecuencyList);
     quoteForm.appendChild(durationComponentScreen);
+
+    // Cargamos el formulario de publicidades
+
 
     // Cargar vendedores
     sellerComponentScreen = sellerComponentLoad(sellerList);
