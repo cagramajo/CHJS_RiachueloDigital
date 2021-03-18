@@ -7,6 +7,7 @@ var quoteForm;
 var campaignTypeComponentScreen;
 var sellerComponentScreen;
 var advertisingFormScreen;
+var advertisingListComponentScreen;
 
 function quoteScreenLoad(campaignTypeArray, advertisingArray){
     quoteForm = document.getElementById("quoteForm")
@@ -23,6 +24,10 @@ function quoteScreenLoad(campaignTypeArray, advertisingArray){
     // Cargamos el formulario de publicidades
     advertisingFormScreen = advertisingFormLoad(optionsAdvertingList, optionsFrecuencyList);
     quoteForm.appendChild(advertisingFormScreen);
+
+    // Cargamos el listado de items publicidad cargados
+    advertisingListComponentScreen = listAdvertisingComponentLoad();
+    quoteForm.appendChild(advertisingListComponentScreen);
 
     // Cargar vendedores
     sellerComponentScreen = sellerComponentLoad(sellerList);
@@ -49,4 +54,9 @@ function getNameAdvertisingList(advertisingArray){
         arrayList.push(elementList);
     });
     return arrayList;
+}
+
+function addAdvertisingList(){
+    var advertisingElmenet = "uno mas";
+    addAdvertisingElement(advertisingElmenet);
 }
