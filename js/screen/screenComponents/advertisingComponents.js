@@ -9,6 +9,7 @@ var designIncludeCheck = document.createElement("input");
 function advertisingComponentLoad(optionsAdverting){
     //div general
     advertisingComponentDiv.setAttribute("class", "row");
+
     //publicidad
     advertisingDiv.setAttribute("class", "col");
     advertisingSelectorLabel.setAttribute("for","advertisingSelector");
@@ -18,12 +19,12 @@ function advertisingComponentLoad(optionsAdverting){
     advertisingSelector.setAttribute("class", "form-control");
     optionsAdverting.forEach(element => {
         var optionAdverting = document.createElement("option");
-        optionAdverting.innerHTML = element
+        optionAdverting.innerHTML = element;
         advertisingSelector.add(optionAdverting);
-
     });
     advertisingDiv.appendChild(advertisingSelector);
     advertisingComponentDiv.appendChild(advertisingDiv);
+
     //incluye diseno
     designIncludeDiv.setAttribute("class","col form-check");
     designIncludeInputLabel.setAttribute("class", "form-check-label");

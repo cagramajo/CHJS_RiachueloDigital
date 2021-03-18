@@ -2,10 +2,12 @@ var optionsCampaignList = [];
 var optionsAdvertingList = [];
 var optionsDurationList = [];
 var optionsFrecuencyList = [];
+var sellerList = [];
 var quoteForm;
 var campaignTypeComponentScreen;
 var advertisingComponentScreen;
 var durationComponentScreen;
+var sellerComponentScreen;
 
 function quoteScreenLoad(campaignTypeArray, advertisingArray){
     quoteForm = document.getElementById("quoteForm")
@@ -28,8 +30,9 @@ function quoteScreenLoad(campaignTypeArray, advertisingArray){
     durationComponentScreen = durationComponentLoad(optionsDurationList, optionsFrecuencyList);
     quoteForm.appendChild(durationComponentScreen);
 
-
     // Cargar vendedores
+    sellerComponentScreen = sellerComponentLoad(sellerList);
+    quoteForm.appendChild(sellerComponentScreen);
 
     // Cotizar y Limpiar
 }
