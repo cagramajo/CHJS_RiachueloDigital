@@ -12,4 +12,8 @@ function advertisingFormLoad(optionsAdvertingList, optionsFrecuencyList){
     // Cargamos la seccion Duración
     durationComponentScreen = durationComponentLoad(optionsFrecuencyList);
     advertisingFormDiv.appendChild(durationComponentScreen);
+
+    // Boton de Carga adicional
+
+    return advertisingFormDiv;
 }

@@ -6,6 +6,7 @@ var sellerList = [];
 var quoteForm;
 var campaignTypeComponentScreen;
 var sellerComponentScreen;
+var advertisingFormScreen;
 
 function quoteScreenLoad(campaignTypeArray, advertisingArray){
     quoteForm = document.getElementById("quoteForm")
@@ -19,17 +20,9 @@ function quoteScreenLoad(campaignTypeArray, advertisingArray){
     campaignTypeComponentScreen = campaignTypeComponentLoad(optionsCampaignList);
     quoteForm.appendChild(campaignTypeComponentScreen);
 
-    // Cargamos la sección Publicidades
-    //optionsAdvertingList = getNameAdvertisingList(advertisingArray);
-    advertisingComponentScreen = advertisingComponentLoad(optionsAdvertingList);
-    quoteForm.appendChild(advertisingComponentScreen);
-
-    // Cargamos la seccion Duración
-    durationComponentScreen = durationComponentLoad(optionsDurationList, optionsFrecuencyList);
-    quoteForm.appendChild(durationComponentScreen);
-
     // Cargamos el formulario de publicidades
-
+    advertisingFormScreen = advertisingFormLoad(optionsAdvertingList, optionsFrecuencyList);
+    quoteForm.appendChild(advertisingFormScreen);
 
     // Cargar vendedores
     sellerComponentScreen = sellerComponentLoad(sellerList);
