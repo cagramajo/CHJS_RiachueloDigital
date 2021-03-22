@@ -22,4 +22,12 @@ class advertising{
         this.campaignTypeName.push(campaignTypeNameElement);
     }
 
+    campaignTypeValidator = function(campaignTypeNameParameter){
+        var indexCampaignType = this.campaignTypeName.indexOf(campaignTypeNameParameter);
+        if(indexCampaignType == -1){
+            return false;
+        }
+        return true;
+    }
+
 }

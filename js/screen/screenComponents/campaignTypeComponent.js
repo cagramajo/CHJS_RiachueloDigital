@@ -14,6 +14,7 @@ function campaignTypeComponentLoad(optionsCampaign){
     //Select
     campaignTypeSelector.setAttribute("id", "campaignTypeSelector");
     campaignTypeSelector.setAttribute("class", "form-control");
+    //campaignTypeSelector.setAttribute("onblur", "updateAdvertisingOption()");
     for (let index = 0; index < optionsCampaign.length; index++) {
         //option
         var optionCampaignType = document.createElement("option");

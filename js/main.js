@@ -115,10 +115,19 @@ else{
 **/
  
 
-function iniciarCotizacion(){
-    campaignTypeParameterArray = campaignTypeLoader();
-    sellerParameterArray = sellerLoader();
-    advertisingParameterArray = advertisingLoader(campaignTypeParameterArray);
-    quoteScreenLoad(campaignTypeParameterArray, advertisingParameterArray);
+function initialize(){
+    // Info necesaria
+    campaignTypeLoader();
+    advertisingLoader();
+    sellerLoader();
+    // Cargamos primera seccion
+    loadQuoteScreen();
 }
 
+function startQuote(){
+    addQuoteComponent();
+}
+
+function quote(){
+    alert("Pronto obtendras tu cotizacion")
+}

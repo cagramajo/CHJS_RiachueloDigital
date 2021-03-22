@@ -1,62 +1,87 @@
+var quoteForm;
 var optionsCampaignList = [];
-var optionsAdvertingList = [];
-var optionsDurationList = [];
+var advertisingOptionsList = [];
 var optionsFrecuencyList = [];
 var sellerList = [];
-var quoteForm;
-var campaignTypeComponentScreen;
-var sellerComponentScreen;
-var advertisingFormScreen;
-var advertisingListComponentScreen;
 
-function quoteScreenLoad(campaignTypeArray, advertisingArray){
+// Carga la seccion Tipo de Campaña
+function addCampaignTypeComponent(){
+    var StartButton;
+    var campaignTypeComponent;
+
+    optionsCampaignList = getNameCampaignTypeList();
+    campaignTypeComponent = campaignTypeComponentLoad(optionsCampaignList);
+    quoteForm.appendChild(campaignTypeComponent);
+    StartButton = document.createElement("button");
+    StartButton.type = "button";
+    StartButton.id = "startQuoteBtn";
+    StartButton.className = "btn btn-primary";
+    StartButton.innerHTML = "Empezar";
+    //StartButton.onclick = "startQuote()"
+    StartButton.setAttribute("onClick", "startQuote()")
+    quoteForm.appendChild(StartButton);
+}
+
+function loadQuoteScreen(){
     quoteForm = document.getElementById("quoteForm")
+    addCampaignTypeComponent()
+}
 
+function addQuoteComponent(){
+    var advertisingForm;
+    var advertisingListComponent;
+    var sellerComponent;
+    var hiddenBtn;
+    var quoteButton;
+    var selectedCampaignTypeOption;
+    var selectedNameCampaignTypeOption;
+    var campaignTypeSelector;
+    
+    quoteForm = document.getElementById("quoteForm");
     //Ocultamos boton "Cotizar Ahora"
-    var hiddenBtn = document.getElementById("startQuoteBtn");
+    hiddenBtn = document.getElementById("startQuoteBtn");
     quoteForm.removeChild(hiddenBtn);
-
-    // Cargamos La sección tipo de Campaña
-    optionsCampaignList = getNameCampaignList(campaignTypeArray);
-    campaignTypeComponentScreen = campaignTypeComponentLoad(optionsCampaignList);
-    quoteForm.appendChild(campaignTypeComponentScreen);
-
     // Cargamos el formulario de publicidades
-    advertisingFormScreen = advertisingFormLoad(optionsAdvertingList, optionsFrecuencyList);
-    quoteForm.appendChild(advertisingFormScreen);
-
+    selectedCampaignTypeOption = document.getElementById("campaignTypeSelector");
+    selectedNameCampaignTypeOption = optionsCampaignList[selectedCampaignTypeOption.selectedIndex];
+    advertisingOptionsList = getNameAdvertisingList(selectedNameCampaignTypeOption);
+    optionsFrecuencyList = getNameFrecuencyList();
+    advertisingForm = advertisingFormLoad(advertisingOptionsList, optionsFrecuencyList);
+    quoteForm.appendChild(advertisingForm);
     // Cargamos el listado de items publicidad cargados
-    advertisingListComponentScreen = listAdvertisingComponentLoad();
-    quoteForm.appendChild(advertisingListComponentScreen);
-
+    advertisingListComponent = listAdvertisingComponentLoad();
+    quoteForm.appendChild(advertisingListComponent);
     // Cargar vendedores
-    sellerComponentScreen = sellerComponentLoad(sellerList);
-    quoteForm.appendChild(sellerComponentScreen);
-
-    // Cotizar y Limpiar
-}
-
-function getNameCampaignList(campaignTypeArray){
-    arrayList = [];
-    elementList = "";
-    campaignTypeArray.forEach(element => {
-        elementList = element.getName();
-        arrayList.push(elementList);
-    });
-    return arrayList;
-}
-
-function getNameAdvertisingList(advertisingArray){
-    arrayList = [];
-    elementList = "";
-    advertisingArray.forEach(element => {
-        elementList = element.getName();
-        arrayList.push(elementList);
-    });
-    return arrayList;
+    sellerList = getNameSellerList();
+    sellerComponent = sellerComponentLoad(sellerList);
+    quoteForm.appendChild(sellerComponent);
+    //boton Cotizar
+    quoteButton = document.createElement("button");
+    quoteButton.type = "button";
+    quoteButton.id = "QuoteBtn";
+    quoteButton.className = "btn btn-primary";
+    quoteButton.innerHTML = "Cotizar";
+    //quoteButton.onclick = "startQuote()"
+    quoteButton.setAttribute("onClick", "quote()")
+    quoteForm.appendChild(quoteButton);
+    campaignTypeSelector = document.getElementById("campaignTypeSelector");
+    campaignTypeSelector.setAttribute("onchange", "updateAdvertisingOption()");
+    campaignTypeSelector.disabled = true;
 }
 
 function addAdvertisingList(){
     var advertisingElmenet = "uno mas";
     addAdvertisingElement(advertisingElmenet);
+}
+
+function updateAdvertisingOption(){
+    var selectedCampaignTypeOption = document.getElementById("campaignTypeSelector");
+    var selectedNameCampaignTypeOption = optionsCampaignList[selectedCampaignTypeOption.selectedIndex];
+    var advertisingListComponent = document.getElementById("advertisingSelector");
+    advertisingListComponent.length = 0;
+    //selectedCampaignTypeOption.length = 0;
+    advertisingOptionsList = getNameAdvertisingList(selectedNameCampaignTypeOption);
+    advertisingOptionsList.forEach(elementList => {
+        advertisingListComponent[advertisingListComponent.length] = new Option(elementList);
+    });
 }

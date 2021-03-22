@@ -15,6 +15,7 @@
     <script src="../js/class/class-campaign.js"></script>
     <script src="../js/class/class-seller.js"></script>
     <script src="../js/class/class-contract.js"></script>
+    <script src="../js/data/dataAccess.js"></script>
     <script src="../js/function.js"></script>
     <script src="../js/screen/screenComponents/campaignTypeComponent.js"></script>
     <script src="../js/screen/screenComponents/advertisingComponents.js"></script>
@@ -29,7 +30,7 @@
     <title>Riachuelo Digital - Cotizador</title>
     <meta name="description" content="Encontra los pequeños comercios del barrio Villa Riachuelo en Capital Federal">
 </head>
-<body class="container background">
+<body class="container background" onload="initialize()">
     <header class="header">
         <div class="header__logoName">
             <img src="../images/riachuelo_digital_logo_6_200px.png">
@@ -82,7 +83,7 @@
                 Contanos que tipo de campania publicitaria deseas y te presupuestamos en linea.
             </p>
             <form id="quoteForm">
-                <button type="button" id="startQuoteBtn" class="btn btn-primary" onclick="iniciarCotizacion()">Cotiza Ahora</button>
+                
             </form>
         </section>
     </main>
