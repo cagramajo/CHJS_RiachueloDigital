@@ -19,7 +19,7 @@ function advertisingFormLoad(optionsAdvertingList, optionsFrecuencyList){
     advertisingAddButton.id = "advertisingAddButton";
     advertisingAddButton.className = "btn btn-primary";
     advertisingAddButton.innerHTML = "Agregar";
-    advertisingAddButton.setAttribute("onclick", "addAdvertisingList()");
+    advertisingAddButton.setAttribute("onclick", "addItemQuote()");
     advertisingFormDiv.appendChild(advertisingAddButton);
 
     return advertisingFormDiv;

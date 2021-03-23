@@ -128,6 +128,15 @@ function startQuote(){
     addQuoteComponent();
 }
 
+function addItemQuote(){
+    // obtengo datos de la pantalla > json
+    var itemQuote = getAdvertisingItem();
+    // agrego al array de cotizacion temporal
+    addTemporalItemQuote(itemQuote);
+    // agrego item a pantalla
+    additemCampaignScreen(itemQuote);
+}
+
 function quote(){
     alert("Pronto obtendras tu cotizacion")
 }

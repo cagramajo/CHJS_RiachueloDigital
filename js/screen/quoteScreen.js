@@ -3,6 +3,8 @@ var optionsCampaignList = [];
 var advertisingOptionsList = [];
 var optionsFrecuencyList = [];
 var sellerList = [];
+var itemsCampaign = [];
+var campaignTypeSelector;
 
 // Carga la seccion Tipo de Campaña
 function addCampaignTypeComponent(){
@@ -35,7 +37,6 @@ function addQuoteComponent(){
     var quoteButton;
     var selectedCampaignTypeOption;
     var selectedNameCampaignTypeOption;
-    var campaignTypeSelector;
     
     quoteForm = document.getElementById("quoteForm");
     //Ocultamos boton "Cotizar Ahora"
@@ -69,9 +70,29 @@ function addQuoteComponent(){
     campaignTypeSelector.disabled = true;
 }
 
-function addAdvertisingList(){
-    var advertisingElmenet = "uno mas";
-    addAdvertisingElement(advertisingElmenet);
+function getAdvertisingItem(){
+    var itemAdvertisingJSON = {
+        "advertisingSelector":"",
+        "designIncludeCheck":false,
+        "duration":0,
+        "frecuency":"SIN CAMBIOS"
+    }
+    var selectedAdvertising = document.getElementById("advertisingSelector");
+    var designIncludeInput = document.getElementById("designIncludeInput");
+    var durationInput = document.getElementById("durationInput");
+    var frecuencyChangeSelector = document.getElementById("frecuencyChangeSelector");
+
+    console.log(selectedAdvertising.selectedIndex);
+    itemAdvertisingJSON["advertisingSelector"] = advertisingOptionsList[selectedAdvertising.selectedIndex];
+    itemAdvertisingJSON["designIncludeCheck"] = designIncludeInput.checked;
+    itemAdvertisingJSON["duration"] = durationInput.value;
+    itemAdvertisingJSON["frecuency"] = optionsFrecuencyList[frecuencyChangeSelector.selectedIndex];
+    return itemAdvertisingJSON
+}
+
+function additemCampaignScreen(itemCampaign){
+    var registro = itemCampaign["advertisingSelector"] + ", " + itemCampaign["designIncludeCheck"] + ", " + itemCampaign["duration"] + ", " + itemCampaign["frecuency"];
+    addAdvertisingElement(registro);
 }
 
 function updateAdvertisingOption(){

@@ -1,7 +1,8 @@
 var campaignTypeList = [];
 var advertisingList = [];
 var sellerList = [];
-var frecuencyList = [1,7,15,30,90,120,180,360]
+var frecuencyList = [0,1,7,15,30,90,120,180,360]
+var temporalItemsQuote = [];
 
 
 function campaignTypeLoader(){
@@ -108,6 +109,7 @@ function getAdvertisingList(campaignTypeName){
 
 function getfrecuencyList(){
     var arrayList = [];
+    arrayList.push("SIN CAMBIOS")
     arrayList.push("DIARIA");
     arrayList.push("SEMANAL");
     arrayList.push("QUINCENAL");
@@ -157,4 +159,8 @@ function sellerLoader(){
 
 function getSellerList(){
     return sellerList;
+}
+
+function addTemporalItemQuote(itemQuote){
+    temporalItemsQuote.push(itemQuote);
 }
