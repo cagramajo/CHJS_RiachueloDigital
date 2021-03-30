@@ -49,48 +49,44 @@ function addQuoteComponent(){
     optionsFrecuencyList = getNameFrecuencyList();
     advertisingForm = advertisingFormLoad(advertisingOptionsList, optionsFrecuencyList);
     quoteForm.appendChild(advertisingForm);
-    // Cargamos el listado de items publicidad cargados
-    advertisingListComponent = listAdvertisingComponentLoad();
-    quoteForm.appendChild(advertisingListComponent);
     // Cargar vendedores
     sellerList = getNameSellerList();
     sellerComponent = sellerComponentLoad(sellerList);
     quoteForm.appendChild(sellerComponent);
-    //boton Cotizar
-    quoteButton = document.createElement("button");
-    quoteButton.type = "button";
-    quoteButton.id = "QuoteBtn";
-    quoteButton.className = "btn btn-primary";
-    quoteButton.innerHTML = "Cotizar";
-    //quoteButton.onclick = "startQuote()"
-    quoteButton.setAttribute("onClick", "quote()")
-    quoteForm.appendChild(quoteButton);
+    // Cargamos el listado de items publicidad cargados
+    advertisingListComponent = listAdvertisingComponentLoad();
+    quoteForm.appendChild(advertisingListComponent);
+    // //boton Cotizar
+    // quoteButton = document.createElement("button");
+    // quoteButton.type = "button";
+    // quoteButton.id = "QuoteBtn";
+    // quoteButton.className = "btn btn-primary";
+    // quoteButton.innerHTML = "Cotizar";
+    // //quoteButton.onclick = "startQuote()"
+    // quoteButton.setAttribute("onClick", "quote()")
+    // quoteForm.appendChild(quoteButton);
     campaignTypeSelector = document.getElementById("campaignTypeSelector");
     campaignTypeSelector.setAttribute("onchange", "updateAdvertisingOption()");
     campaignTypeSelector.disabled = true;
 }
 
+//Aplicamos JQuery y subida al local storage
+
 function getAdvertisingItem(){
     var itemAdvertisingJSON = {
-        "advertisingSelector":"",
-        "designIncludeCheck":false,
-        "duration":0,
-        "frecuency":"SIN CAMBIOS"
+        "idAdvertisingItem": localStorage.getItem("advertisingItemCount"),
+        "advertisingSelector": $("#advertisingSelector option:selected").text(),
+        "designIncludeCheck": $("#designIncludeInput").is( ":checked" ),
+        "duration": $("#durationInput").val(),
+        "frecuency": $("#frecuencyChangeSelector option:selected").text()
     }
-    var selectedAdvertising = document.getElementById("advertisingSelector");
-    var designIncludeInput = document.getElementById("designIncludeInput");
-    var durationInput = document.getElementById("durationInput");
-    var frecuencyChangeSelector = document.getElementById("frecuencyChangeSelector");
 
-    console.log(selectedAdvertising.selectedIndex);
-    itemAdvertisingJSON["advertisingSelector"] = advertisingOptionsList[selectedAdvertising.selectedIndex];
-    itemAdvertisingJSON["designIncludeCheck"] = designIncludeInput.checked;
-    itemAdvertisingJSON["duration"] = durationInput.value;
-    itemAdvertisingJSON["frecuency"] = optionsFrecuencyList[frecuencyChangeSelector.selectedIndex];
+    localStorage.setItem ("itemAdvertising",JSON.stringify(itemAdvertisingJSON));
     return itemAdvertisingJSON
 }
 
-function additemCampaignScreen(itemCampaign){
+function additemCampaignScreen(itemCampaign2){
+    var itemCampaign = JSON.parse(localStorage.getItem("itemAdvertising"));
     var registro = itemCampaign["advertisingSelector"] + ", " + itemCampaign["designIncludeCheck"] + ", " + itemCampaign["duration"] + ", " + itemCampaign["frecuency"];
     addAdvertisingElement(registro);
 }

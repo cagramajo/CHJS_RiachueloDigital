@@ -5,7 +5,7 @@ var sellerSelector = document.createElement("select");
 
 function sellerComponentLoad(optionsSeller){
     //div general
-    sellerComponentDiv.setAttribute("class", "row");
+    sellerComponentDiv.setAttribute("class", "col");
 
     //vendedores
     sellerDiv.setAttribute("class", "col");
