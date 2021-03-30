@@ -90,19 +90,19 @@ function addAdvertisingElement(textElement){
     var textNode = document.createTextNode(textElement);
 
     var itemCampaign = JSON.parse(localStorage.getItem("itemAdvertising"));
-    var trAdvertisingFil = $((document).createElement("tr"));
-    var tdIdAdvertising = $((document).createElement("td"));
-    var tdAdvertising = $((document).createElement("td"));
-    var tdDesignInclude =$((document).createElement("td"));
-    var tdDuration = $((document).createElement("td"));
-    var tdFrecuency = $((document).createElement("td"));
+    var trAdvertisingFil = document.createElement("tr");
+    var tdIdAdvertising = document.createElement("td");
+    var tdAdvertising = document.createElement("td");
+    var tdDesignInclude =document.createElement("td");
+    var tdDuration = document.createElement("td");
+    var tdFrecuency = document.createElement("td");
     
     advertisingItemCount = parseInt(localStorage.getItem("advertisingItemCount"))+1;
     trAdvertisingFil.id = "trAdvertising_" + advertisingItemCount;
     //id
     tdIdAdvertising.id = "tdIdAdvertising_" + advertisingItemCount;
     tdIdAdvertising.scope = "col";
-    tdIdAdvertising.appendChild(document.createTextNode(advertisingItemCount));
+    tdIdAdvertising.appendChild(document.createTextNode(String(advertisingItemCount)));
     trAdvertisingFil.appendChild(tdIdAdvertising);
 
     //Tipo de Publicidad
