@@ -61,7 +61,7 @@ function listAdvertisingComponentLoad(){
     tdFootAdvertising.colSpan = "4";
     tdFootAdvertising.className = "text-center"
     quoteButton.type = "button";
-    quoteButton.id = "QuoteBtn";
+    quoteButton.id = "quoteBtn";
     quoteButton.className = "btn btn-primary";
     quoteButton.innerHTML = "Cotizar";
     quoteButton.setAttribute("onClick", "quote()")
@@ -86,8 +86,8 @@ function listAdvertisingComponentLoad(){
 
 
 function addAdvertisingElement(textElement){
-    var liElement = document.createElement("li");
-    var textNode = document.createTextNode(textElement);
+    //var liElement = document.createElement("li");
+    //var textNode = document.createTextNode(textElement);
 
     var itemCampaign = JSON.parse(localStorage.getItem("itemAdvertising"));
     var trAdvertisingFil = document.createElement("tr");
@@ -102,7 +102,7 @@ function addAdvertisingElement(textElement){
     //id
     tdIdAdvertising.id = "tdIdAdvertising_" + advertisingItemCount;
     tdIdAdvertising.scope = "col";
-    tdIdAdvertising.appendChild(document.createTextNode(String(advertisingItemCount)));
+    tdIdAdvertising.appendChild(document.createTextNode(advertisingItemCount));
     trAdvertisingFil.appendChild(tdIdAdvertising);
 
     //Tipo de Publicidad
@@ -114,19 +114,30 @@ function addAdvertisingElement(textElement){
     //Dato Disenio
     tdDesignInclude.id = "tdDesignInclude_" + tdDesignInclude;
     tdDesignInclude.scope = "col";
-    var designIncludeCheckTable = $((document).createElement("input"));
+    var designIncludeCheckTable = document.createElement("input");
     designIncludeCheckTable.setAttribute("class", "form-check-input");
     designIncludeCheckTable.setAttribute("type", "checkbox");
     designIncludeCheckTable.setAttribute("id", "designIncludeInput_" + advertisingItemCount);
     designIncludeCheckTable.checked = itemCampaign["designIncludeCheck"];
+    designIncludeCheckTable.disabled = true;
     tdDesignInclude.appendChild(designIncludeCheckTable);
     trAdvertisingFil.appendChild(tdDesignInclude);
 
-    $('#designIncludeInput_' + advertisingItemCount).prop('checked',true);
-    $('#designIncludeInput_' + advertisingItemCount).
+    //Dato duracion
+    tdDuration.id = "tdDuration_" + advertisingItemCount;
+    tdDuration.scope = "col";
+    tdDuration.appendChild(document.createTextNode(itemCampaign["duration"]));
+    trAdvertisingFil.appendChild(tdDuration);
 
+    //dato frecuencia
+    tdFrecuency.id = "tdFrecuency_" + advertisingItemCount;
+    tdFrecuency.scope = "col";
+    tdFrecuency.appendChild(document.createTextNode(itemCampaign["frecuency"]));
+    trAdvertisingFil.appendChild(tdFrecuency);
 
-    liElement.appendChild(textNode);
-    document.getElementById("listAdvertising").appendChild(liElement);
+    //liElement.appendChild(textNode);
+    //document.getElementById("listAdvertising").appendChild(liElement);
+    document.getElementById("advertisingTbody").appendChild(trAdvertisingFil);
+    document.getElementById("quoteBtn").disabled = false;
     //$("#advertisingTable").hide();
 }

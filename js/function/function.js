@@ -64,3 +64,7 @@ function getNameSellerList(){
     return getNameObjetList(getSellerList());
 }
 
+function getQuote(){
+    calculateQuote();
+    // tambien hay que limpiar el datoen localStorage
+}

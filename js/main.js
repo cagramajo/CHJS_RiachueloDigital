@@ -46,7 +46,7 @@ con esos datos se calcula el valor final
 
 // definimos una publicidad estandar para la simulacion
 
-var miAanuncio = new campaign("Prueba", "Facebook", 23);
+var miAanuncio //= new campaign("Prueba", "Facebook", 23);
 var miCampania;
 var miPresupuesto = 0;
 var nombreCamania = "";
@@ -57,6 +57,7 @@ var miContrato;
 var nombreVendedor = "";
 var comisionVendedor = 0;
 var idVendedorSeleccionado = 0;
+
 
 var campaignTypeParameterArray = [];
 var sellerParameterArray = [];
@@ -124,10 +125,12 @@ function initialize(){
     loadQuoteScreen();
 }
 
+// Iniciar la cotizacion
 function startQuote(){
     addQuoteComponent();
 }
 
+//agregar item a la cotizacion
 function addItemQuote(){
     // obtengo datos de la pantalla > json
     var itemQuote = getAdvertisingItem();
@@ -137,6 +140,8 @@ function addItemQuote(){
     additemCampaignScreen(itemQuote);
 }
 
+//calcular la cotizacion
 function quote(){
-    alert("Pronto obtendras tu cotizacion")
+    //Llamamos a getQuote() en function.js 
+    getQuote();
 }

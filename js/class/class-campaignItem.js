@@ -1,12 +1,13 @@
-class campaign{
-    constructor(campaignTypeParameter, ad, segment, duration,budget ){
-        this.campaignType = campaignTypeParameter
+class campaignItem{
+    constructor(ad, ckeckDesign, duration, frecuency ){
         this.advertising = ad;
-        this.segment = segment; // 0 - NO, 1 - SI
+        this.includDesingCheck = ckeckDesign;
         this.duration = duration; // En dias
-        this.budget = budget;
+        this.frecuency = frecuency;
+        this.changeNumber = (duration % frecuency);
         this.cpcPercent = 0.5;
         this.cpmPercent = 0.5;
+        this.itemValue = 0;
     }
 
     getDuratio = function(){
@@ -19,5 +20,9 @@ class campaign{
 
     getBudget = function(){
         return this.budget;
+    }
+
+    calculateItemCost(){
+        
     }
 }
