@@ -2,6 +2,7 @@ var campaignTypeList = [];
 var advertisingList = [];
 var sellerList = [];
 var frecuencyList = [0,1,7,15,30,90,120,180,360]
+var frecuencyName = [];
 var temporalItemsQuote = [];
 
 
@@ -163,4 +164,38 @@ function getSellerList(){
 
 function addTemporalItemQuote(itemQuote){
     temporalItemsQuote.push(itemQuote);
+}
+
+function calculateQuote(){
+    var itemsCampaign = [];
+    var valueCampaing = 0;
+
+    // Crear la campania
+
+
+    // Repetir para todos los items temporales
+    temporalItemsQuote.forEach(element => {
+        // Tomamos un elemento del array
+        var itemCampaign;
+        
+        // Obtenemos los objetos correspondientes
+        var advertisingElem =  advertisingList.find(elem => elem.getName() == element["advertisingSelector"]);
+        var checkElem = element["designIncludeCheck"];
+        var durationElem = element["duration"];
+        var frecuencyNameElem = frecuencyName.findIndex(elem => elem = element["frecuency"]);
+        var frecuencyElem = frecuencyList[frecuencyNameElem];
+        // Creamos el item campania
+        itemCampaign = new campaignItem(advertisingElem, checkElem, durationElem, frecuencyElem);
+        // Agregamos el item a la campania
+        itemsCampaign.push(itemCampaign);
+        // Calculamos el valor del item
+        itemCampaign.calculateItemCost();
+        // Acumulamos Valor
+    });
+    console.log(itemsCampaign);
+    // Eliminamos Items temporales
+    // Obtenemos al vendedor
+    // Agregamos el Vendedor
+    // Calculamos valor final
+    // devolvemos valor final
 }

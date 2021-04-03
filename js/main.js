@@ -42,77 +42,6 @@ y el vendedor para conocer su comision;
 con esos datos se calcula el valor final
 
 */
-
-
-// definimos una publicidad estandar para la simulacion
-
-var miAanuncio = new campaign("Prueba", "Facebook", 23);
-var miCampania;
-var miPresupuesto = 0;
-var nombreCamania = "";
-var miSegmentacion = 0; // asumimos que no hay segmentacion
-var miDuracion = 0;
-var miValorPrevio = 0;
-var miContrato;
-var nombreVendedor = "";
-var comisionVendedor = 0;
-var idVendedorSeleccionado = 0;
-
-var campaignTypeParameterArray = [];
-var sellerParameterArray = [];
-var advertisingParameterArray = [];
-
-/**
-// Datos para el alta de vendedores
-alert("vamos a cargar los vendedores al sistema, para finalizar, ingresa Salir");
-nombreVendedor = prompt("Igresa el nombre del vendedor");
-nombreVendedor = nombreVendedor.trim().toUpperCase();
-while (nombreVendedor != "SALIR"){
-    comisionVendedor = prompt("Ingresa la comision de " + nombreVendedor);
-    if (validadorComision(comisionVendedor)){
-        cargarVendedor(vendedores, nombreVendedor, comisionVendedor);    }
-    else{
-        alert("La comision es superior a la maxima permitda")
-    }
-    nombreVendedor = prompt("Igresa el nombre del vendedor");
-    nombreVendedor = nombreVendedor.trim().toUpperCase();
-}
-
-// Ordenamos los vendedores 
-vendedores = ordenarAlfabeticamenteVendedores(vendedores);
-
-// Solicitamos los datos para crear una campana
-
-alert("Vamos a solicitarte algunos datos para definir el valor total de tu campana");
-nombreCamania = prompt("Ingresa el nombre de la campania: ");
-miDuracion = parseInt(prompt("Ingresa la duracion en dias de la campania: "));
-miPresupuesto = parseInt(prompt("Ingresa el presupuesto que destinarias a la campania: "));
-
-// creamos la campania
-miCampania = new campaign(miAanuncio, miSegmentacion, miDuracion, miPresupuesto);
-//console.log(miCampania);
-
-// seleccionamos el vendor
-do {
-    idVendedorSeleccionado = parseInt(prompt("Indica el ID de tu vendedor " + listarVendedores(vendedores)));    
-} while (idVendedorSeleccionado > vendedores.length);
-
-// creamos un presupuesto de contrato
-miContrato = new contract(miCampania, vendedores[idVendedorSeleccionado]);
-//console.log(miContrato);
-
-// calculamos el valor del contrato
-miValorPrevio = miContrato.PreviousCostCalculation();
-
-// Mostramos el valor previo
-
-if(miValorPrevio == 0){
-    console.log("No podemos presupuestar esta campana");
-}
-else{
-    console.log("El valor de tu campana sera de: " + miValorPrevio);
-}
-**/
  
 
 function initialize(){
@@ -138,5 +67,6 @@ function addItemQuote(){
 }
 
 function quote(){
-    alert("Pronto obtendras tu cotizacion")
+    //alert("Pronto obtendras tu cotizacion")
+    getQuote();
 }
