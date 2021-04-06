@@ -176,6 +176,8 @@ function addTemporalItemQuote(itemQuote){
 }
 
 function setItemCampaign(){
+    // Limpiamos el array de items de campaña
+    itemsCampaign = [];
     // Repetir para todos los items temporales
     temporalItemsQuote.forEach(element => {
         // Tomamos un elemento del array
@@ -196,7 +198,7 @@ function setItemCampaign(){
         // Acumulamos Valor
     });
     // Eliminamos Items temporales
-    temporalItemsQuote = [];
+    //temporalItemsQuote = [];
 }
 
 function newCampaignQuote(campaignTypeSelected, sellerSelected){
