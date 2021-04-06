@@ -34,7 +34,6 @@ function addQuoteComponent(){
     var advertisingListComponent;
     var sellerComponent;
     var hiddenBtn;
-    var quoteButton;
     var selectedCampaignTypeOption;
     var selectedNameCampaignTypeOption;
     
@@ -56,15 +55,6 @@ function addQuoteComponent(){
     // Cargamos el listado de items publicidad cargados
     advertisingListComponent = listAdvertisingComponentLoad();
     quoteForm.appendChild(advertisingListComponent);
-    // //boton Cotizar
-    // quoteButton = document.createElement("button");
-    // quoteButton.type = "button";
-    // quoteButton.id = "QuoteBtn";
-    // quoteButton.className = "btn btn-primary";
-    // quoteButton.innerHTML = "Cotizar";
-    // //quoteButton.onclick = "startQuote()"
-    // quoteButton.setAttribute("onClick", "quote()")
-    // quoteForm.appendChild(quoteButton);
     campaignTypeSelector = document.getElementById("campaignTypeSelector");
     campaignTypeSelector.setAttribute("onchange", "updateAdvertisingOption()");
     campaignTypeSelector.disabled = true;
@@ -85,10 +75,9 @@ function getAdvertisingItem(){
     return itemAdvertisingJSON
 }
 
-function additemCampaignScreen(itemCampaign2){
-    var itemCampaign = JSON.parse(localStorage.getItem("itemAdvertising"));
-    var registro = itemCampaign["advertisingSelector"] + ", " + itemCampaign["designIncludeCheck"] + ", " + itemCampaign["duration"] + ", " + itemCampaign["frecuency"];
-    addAdvertisingElement(registro);
+function additemCampaignScreen(){
+    //addAdvertisingElement();
+    addAdvertisingElementSlow();
 }
 
 function updateAdvertisingOption(){
@@ -101,4 +90,12 @@ function updateAdvertisingOption(){
     advertisingOptionsList.forEach(elementList => {
         advertisingListComponent[advertisingListComponent.length] = new Option(elementList);
     });
+}
+
+function selectedCampaignOnScreen(){
+    return $("#campaignTypeSelector option:selected").text();
+}
+
+function selectedSellerOnScreen(){
+    return $("#sellerSelector option:selected").text();
 }

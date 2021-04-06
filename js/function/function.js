@@ -1,38 +1,5 @@
 var comisionMaxima = 0.1;
 
-function validadorComision(comision){
-    var comisionRecibida = parseFloat(comision);
-
-    if (comisionRecibida <= comisionMaxima) {
-        return true;
-    }
-    return false;
-}
-
-function listarVendedores(vendedores){
-    var salida = "";
-    
-    for (let index = 0; index < vendedores.length; index++) {
-        salida = salida + index + " - " + vendedores[index].getName() + " ";      
-    }
-    return salida;
-}
-
-function ordenarAlfabeticamenteVendedores(vendedores){
-
-    vendedores.sort(function (a, b) {
-        if (a.getName() > b.getName()) {
-            return 1;
-        }
-        if (a.getName() < b.getName()) {
-            return -1;
-        }
-        // a must be equal to b
-        return 0;
-        });
-    return vendedores
-}
-
 // Devuelve array de string a partir de un listado de objetos 
 function getNameObjetList(objectArray){
     arrayList = [];
@@ -64,8 +31,21 @@ function getNameSellerList(){
     return getNameObjetList(getSellerList());
 }
 
-function getQuote(){
-    calculateQuote();
-    // tambien hay que limpiar el datoen localStorage
+function itemConfirmation(){
+    setItemCampaign();
 }
 
+function newCampaign(){
+    // Obtenemos el tipo de campania
+    var campaignTypeSelected = selectedCampaignOnScreen();
+    // Obtenemos al vendedor a partir del dato de la pantalla
+    var sellerSelected = selectedSellerOnScreen();
+    // creamos la campania y devolvemos su cotizaci[on]
+    return newCampaignQuote(campaignTypeSelected, sellerSelected);
+
+}
+
+function campaignValueScreen(quoteValueParameter){
+    console.log(quoteValueParameter);
+    alert(quoteValueParameter);
+}

@@ -1,18 +1,42 @@
 class campaign{
-    constructor(campaignTypeParameter){
+    constructor(campaignTypeParameter, seller){
         this.campaignType = campaignTypeParameter;
-        this.itemsCampaign = []
+        this.seller = seller;
+        this.itemsCampaign = [];
+        this.totalQuote = 0;
+
     }
 
-    getDuratio = function(){
-        return this.duration;
+    getCampaignType = function(){
+        return this.campaignType;
     }
 
-    getAdvertising =  function(){
-        return this.advertising;
+    getSeller =  function(){
+        return this.seller;
     }
 
-    getBudget = function(){
-        return this.budget;
+    getItemsCampaign = function(){
+        return this.itemsCampaign;
+    }
+
+    getTotalQuote = function(){
+        return this.totalQuote;
+    }
+
+    getTotalQuote = function(){
+        return this.totalQuote;
+    }
+
+    setItemsCampaign = function(listItem){
+        this.itemsCampaign = listItem;
+    }
+
+    quote = function(){
+        //calculamos el valor final de la cotizacion.
+        var totalItemCampaign = 0;
+        itemsCampaign.forEach(element => {
+            totalItemCampaign = totalItemCampaign + element.getItemValue();
+        });
+        this.totalQuote = totalItemCampaign;
     }
 }

@@ -1,13 +1,23 @@
 class advertising{
-    constructor(name, socialMedia, cost){
+    constructor(name, socialMedia, cost, costDesign, feeManagment){
         this.name = name;
         this.socialMedia = socialMedia;
-        this.cost = cost;
+        this.costBase = cost;
+        this.feeManagment = feeManagment;
+        this.designCost = costDesign
         this.campaignTypeName = [];
     }
 
-    getCost = function(){
-        return this.cost;
+    getFeeManagment = function(){
+        return this.feeManagment;
+    }
+
+    getCostBase = function(){
+        return this.costBase;
+    }
+
+    getDesignCost = function(){
+        return this.designCost;
     }
 
     getName = function(){

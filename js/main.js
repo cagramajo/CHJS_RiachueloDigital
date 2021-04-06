@@ -67,6 +67,13 @@ function addItemQuote(){
 }
 
 function quote(){
-    //alert("Pronto obtendras tu cotizacion")
-    getQuote();
+
+    var quoteValue
+    // Pasamos los Items a definitivos
+    itemConfirmation();
+    // Cremos la campania y calculamos su valor
+    quoteValue = newCampaign();
+    // devolvemos valor final en pantalla
+    campaignValueScreen(quoteValue);
+
 }

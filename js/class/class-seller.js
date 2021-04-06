@@ -2,6 +2,7 @@ class seller{
     constructor(name, commission){
         this.name = name;
         this.commission = commission;
+
     }
 
     getCommission = function(){

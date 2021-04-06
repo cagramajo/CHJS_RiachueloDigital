@@ -1,9 +1,11 @@
 var campaignTypeList = [];
 var advertisingList = [];
-var sellerList = [];
+var sellerListObject = [];
 var frecuencyList = [0,1,7,15,30,90,120,180,360]
 var frecuencyName = [];
 var temporalItemsQuote = [];
+var itemsCampaign = [];
+var campaigns = [];
 
 
 function campaignTypeLoader(){
@@ -37,58 +39,66 @@ function advertisingLoader(){
     var advertisingName = "";
     var advertisingSocialMedia = "";
     var advertisingCost = 0;
+    var designCost = 0;
+    var feeManagment = 0.03;
     var web = "Solo WEB Riachuelo Digital";
     var webRedes = "WEB + Redes Riachiuelo Digital";
     var redes = "Administramos tus Redes";
 
     // Cargar publicaciones WEB
-    advertisingName = "Publicacion en web"
-    advertisingSocialMedia = "web"
-    advertisingCost = 100
-    var advertisingElementWeb = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingName = "Publicacion en web";
+    advertisingSocialMedia = "web";
+    advertisingCost = 100;
+    designCost = 500;
+    var advertisingElementWeb = new advertising(advertisingName, advertisingSocialMedia, advertisingCost, designCost, feeManagment);
     advertisingElementWeb.addCampaignTypeName(web);
     advertisingElementWeb.addCampaignTypeName(webRedes);
     advertisingList.push(advertisingElementWeb);
 
     // Cargar publicidad Facebook
-    advertisingName = "Facebook Post"
-    advertisingSocialMedia = "Facebook"
-    advertisingCost = 500
-    var advertisingElementFBP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingName = "Facebook Post";
+    advertisingSocialMedia = "Facebook";
+    advertisingCost = 500;
+    designCost = 900;
+    var advertisingElementFBP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost, designCost, feeManagment);
     advertisingElementFBP.addCampaignTypeName(webRedes);
     advertisingElementFBP.addCampaignTypeName(redes);
     advertisingList.push(advertisingElementFBP);
 
-    advertisingName = "Facebook Story"
-    advertisingSocialMedia = "Facebook"
-    advertisingCost = 300
-    var advertisingElementFBS = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingName = "Facebook Story";
+    advertisingSocialMedia = "Facebook";
+    advertisingCost = 300;
+    designCost = 700;
+    var advertisingElementFBS = new advertising(advertisingName, advertisingSocialMedia, advertisingCost, designCost, feeManagment);
     advertisingElementFBS.addCampaignTypeName(webRedes);
     advertisingElementFBS.addCampaignTypeName(redes);
     advertisingList.push(advertisingElementFBS);  
 
     // Cargar Publicidad Instagram
-    advertisingName = "Instagram Post"
-    advertisingSocialMedia = "Instagram"
-    advertisingCost = 600
-    var advertisingElementIGP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingName = "Instagram Post";
+    advertisingSocialMedia = "Instagram";
+    advertisingCost = 600;
+    designCost = 1200;
+    var advertisingElementIGP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost, designCost, feeManagment);
     advertisingElementIGP.addCampaignTypeName(webRedes);
     advertisingElementIGP.addCampaignTypeName(redes);
     advertisingList.push(advertisingElementIGP);  
 
-    advertisingName = "Instagram Story"
-    advertisingSocialMedia = "Instagram"
-    advertisingCost = 350
-    var advertisingElementIGS = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingName = "Instagram Story";
+    advertisingSocialMedia = "Instagram";
+    advertisingCost = 350;
+    designCost = 900;
+    var advertisingElementIGS = new advertising(advertisingName, advertisingSocialMedia, advertisingCost, designCost, feeManagment);
     advertisingElementIGS.addCampaignTypeName(webRedes);
     advertisingElementIGS.addCampaignTypeName(redes);
     advertisingList.push(advertisingElementIGS); 
 
     // Carga publicidad Twitter
-    advertisingName = "Twitter Post"
-    advertisingSocialMedia = "Twitter"
-    advertisingCost = 250
-    var advertisingElementTWP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost);
+    advertisingName = "Twitter Post";
+    advertisingSocialMedia = "Twitter";
+    advertisingCost = 250;
+    designCost = 400;
+    var advertisingElementTWP = new advertising(advertisingName, advertisingSocialMedia, advertisingCost, designCost, feeManagment);
     advertisingElementTWP.addCampaignTypeName(redes);
     advertisingList.push(advertisingElementTWP); 
 
@@ -109,17 +119,16 @@ function getAdvertisingList(campaignTypeName){
 }
 
 function getfrecuencyList(){
-    var arrayList = [];
-    arrayList.push("SIN CAMBIOS")
-    arrayList.push("DIARIA");
-    arrayList.push("SEMANAL");
-    arrayList.push("QUINCENAL");
-    arrayList.push("MENSUAL");
-    arrayList.push("TRIMESTRAL");
-    arrayList.push("CUATRIMESTRAL");
-    arrayList.push("SEMESTRAL");
-    arrayList.push("ANUAL");
-    return arrayList;
+    frecuencyName.push("SIN CAMBIOS")
+    frecuencyName.push("DIARIA");
+    frecuencyName.push("SEMANAL");
+    frecuencyName.push("QUINCENAL");
+    frecuencyName.push("MENSUAL");
+    frecuencyName.push("TRIMESTRAL");
+    frecuencyName.push("CUATRIMESTRAL");
+    frecuencyName.push("SEMESTRAL");
+    frecuencyName.push("ANUAL");
+    return frecuencyName;
 }
 
 function sellerLoader(){
@@ -130,49 +139,43 @@ function sellerLoader(){
     sellerName = "Juan Jose";
     sellerCommission = 0.08;
     var vendedor1 = new seller(sellerName, sellerCommission);
-    sellerList.push(vendedor1);
+    sellerListObject.push(vendedor1);
 
     // Vendedor 2
     sellerName = "Maria Julieta";
     sellerCommission = 0.085;
     var vendedor2 = new seller(sellerName, sellerCommission);
-    sellerList.push(vendedor2);
+    sellerListObject.push(vendedor2);
 
     // Vendedor 3
     sellerName = "Yesica Rosaura";
     sellerCommission = 0.075;
     var vendedor3 = new seller(sellerName, sellerCommission);
-    sellerList.push(vendedor3);
+    sellerListObject.push(vendedor3);
 
     // Vendedor 4
     sellerName = "David Raul";
     sellerCommission = 0.07;
     var vendedor4 = new seller(sellerName, sellerCommission);
-    sellerList.push(vendedor4);
+    sellerListObject.push(vendedor4);
 
     // Vendedor 5
     sellerName = "Renato";
     sellerCommission = 0.09;
     var vendedor5 = new seller(sellerName, sellerCommission);
-    sellerList.push(vendedor5);
+    sellerListObject.push(vendedor5);
 
 }
 
 function getSellerList(){
-    return sellerList;
+    return sellerListObject;
 }
 
 function addTemporalItemQuote(itemQuote){
     temporalItemsQuote.push(itemQuote);
 }
 
-function calculateQuote(){
-    var itemsCampaign = [];
-    var valueCampaing = 0;
-
-    // Crear la campania
-
-
+function setItemCampaign(){
     // Repetir para todos los items temporales
     temporalItemsQuote.forEach(element => {
         // Tomamos un elemento del array
@@ -182,7 +185,7 @@ function calculateQuote(){
         var advertisingElem =  advertisingList.find(elem => elem.getName() == element["advertisingSelector"]);
         var checkElem = element["designIncludeCheck"];
         var durationElem = element["duration"];
-        var frecuencyNameElem = frecuencyName.findIndex(elem => elem = element["frecuency"]);
+        var frecuencyNameElem = frecuencyName.findIndex(elem => elem == element["frecuency"]);
         var frecuencyElem = frecuencyList[frecuencyNameElem];
         // Creamos el item campania
         itemCampaign = new campaignItem(advertisingElem, checkElem, durationElem, frecuencyElem);
@@ -192,10 +195,17 @@ function calculateQuote(){
         itemCampaign.calculateItemCost();
         // Acumulamos Valor
     });
-    console.log(itemsCampaign);
     // Eliminamos Items temporales
-    // Obtenemos al vendedor
-    // Agregamos el Vendedor
-    // Calculamos valor final
-    // devolvemos valor final
+    temporalItemsQuote = [];
+}
+
+function newCampaignQuote(campaignTypeSelected, sellerSelected){
+    var campaingQuote;
+    var seller = sellerListObject.find(element => element.getName() == sellerSelected);
+    var campaignType = campaignTypeList.find(element => element.getName() == campaignTypeSelected);
+    campaingQuote = new campaign(campaignType, seller);
+    campaingQuote.quote();
+    campaigns.push(campaingQuote);
+    return campaingQuote.getTotalQuote();
+
 }

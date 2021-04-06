@@ -19,7 +19,7 @@ function listAdvertisingComponentLoad(){
     var tdFootAdvertising = document.createElement("td");
     var quoteButton = document.createElement("button");
 
-    
+    // Identificamos los componentes de la tabla    
     listAdvertisingComponentDiv.className = "col";
     advertisingTable.id = "advertisingTable";
     advertisingTable.className = "table table-striped";
@@ -84,7 +84,7 @@ function listAdvertisingComponentLoad(){
     return listAdvertisingComponentDiv;
 }
 
-function addAdvertisingElement(textElement){
+function addAdvertisingElement(){
     //var liElement = document.createElement("li");
     //var textNode = document.createTextNode(textElement);
 
@@ -97,6 +97,7 @@ function addAdvertisingElement(textElement){
     var tdFrecuency = document.createElement("td");
     
     advertisingItemCount = parseInt(localStorage.getItem("advertisingItemCount"))+1;
+    localStorage.setItem("advertisingItemCount", advertisingItemCount);
     trAdvertisingFil.id = "trAdvertising_" + advertisingItemCount;
     //id
     tdIdAdvertising.id = "tdIdAdvertising_" + advertisingItemCount;
@@ -141,50 +142,11 @@ function addAdvertisingElement(textElement){
     //$("#advertisingTable").hide();
 }
 
-/*
-function addAdvertisingElement(textElement){
-    var liElement = document.createElement("li");
-    var textNode = document.createTextNode(textElement);
 
-    var itemCampaign = JSON.parse(localStorage.getItem("itemAdvertising"));
-    var trAdvertisingFil = document.createElement("tr");
-    var tdIdAdvertising = document.createElement("td");
-    var tdAdvertising = document.createElement("td");
-    var tdDesignInclude =document.createElement("td");
-    var tdDuration = document.createElement("td");
-    var tdFrecuency = document.createElement("td");
-    
-    advertisingItemCount = parseInt(localStorage.getItem("advertisingItemCount"))+1;
-    trAdvertisingFil.id = "trAdvertising_" + advertisingItemCount;
-    //id
-    tdIdAdvertising.id = "tdIdAdvertising_" + advertisingItemCount;
-    tdIdAdvertising.scope = "col";
-    tdIdAdvertising.appendChild(document.createTextNode(String(advertisingItemCount)));
-    trAdvertisingFil.appendChild(tdIdAdvertising);
-
-    //Tipo de Publicidad
-    tdAdvertising.id = "tdAdvertising_" + advertisingItemCount;
-    tdAdvertising.scope = "col";
-    tdAdvertising.appendChild(document.createTextNode(itemCampaign["advertisingSelector"]));
-    trAdvertisingFil.appendChild(tdAdvertising);
-
-    //Dato Disenio
-    tdDesignInclude.id = "tdDesignInclude_" + tdDesignInclude;
-    tdDesignInclude.scope = "col";
-    var designIncludeCheckTable = $((document).createElement("input"));
-    designIncludeCheckTable.setAttribute("class", "form-check-input");
-    designIncludeCheckTable.setAttribute("type", "checkbox");
-    designIncludeCheckTable.setAttribute("id", "designIncludeInput_" + advertisingItemCount);
-    designIncludeCheckTable.checked = itemCampaign["designIncludeCheck"];
-    tdDesignInclude.appendChild(designIncludeCheckTable);
-    trAdvertisingFil.appendChild(tdDesignInclude);
-
-    $('#designIncludeInput_' + advertisingItemCount).prop('checked',true);
-    $('#designIncludeInput_' + advertisingItemCount).
-
-
-    liElement.appendChild(textNode);
-    document.getElementById("listAdvertising").appendChild(liElement);
-    //$("#advertisingTable").hide();
+function addAdvertisingElementSlow(){
+    var idElem;
+    addAdvertisingElement();
+    idElem = localStorage.getItem("advertisingItemCount");
+    $("#trAdvertising_" + idElem).hide();
+    $("#trAdvertising_" + idElem).fadeIn("slow");
 }
-*/
