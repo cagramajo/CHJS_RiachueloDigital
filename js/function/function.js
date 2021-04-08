@@ -46,6 +46,7 @@ function newCampaign(){
 }
 
 function campaignValueScreen(quoteValueParameter){
+    
     console.log(quoteValueParameter);
     alert(quoteValueParameter);
 }

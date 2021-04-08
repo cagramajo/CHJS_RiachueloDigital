@@ -26,7 +26,7 @@ function advertisingComponentLoad(optionsAdverting){
     advertisingComponentDiv.appendChild(advertisingSelectorDiv);
 
     //incluye diseno
-    designIncludeCheckDiv.setAttribute("class","col form-check");
+    designIncludeCheckDiv.setAttribute("class","col form-check align-self-center");
     designIncludeCheckLabel.setAttribute("class", "form-check-label");
     designIncludeCheckLabel.setAttribute("for","designIncludeInput");
     designIncludeCheckLabel.innerHTML = "Incluye diseño";

@@ -8,20 +8,13 @@ var campaignTypeSelector;
 
 // Carga la seccion Tipo de Campaña
 function addCampaignTypeComponent(){
-    var StartButton;
+    //var StartButton;
     var campaignTypeComponent;
 
     optionsCampaignList = getNameCampaignTypeList();
     campaignTypeComponent = campaignTypeComponentLoad(optionsCampaignList);
     quoteForm.appendChild(campaignTypeComponent);
-    StartButton = document.createElement("button");
-    StartButton.type = "button";
-    StartButton.id = "startQuoteBtn";
-    StartButton.className = "btn btn-primary";
-    StartButton.innerHTML = "Empezar";
-    //StartButton.onclick = "startQuote()"
-    StartButton.setAttribute("onClick", "startQuote()")
-    quoteForm.appendChild(StartButton);
+    startQuoteButtonLoad();
 }
 
 function loadQuoteScreen(){
@@ -39,8 +32,7 @@ function addQuoteComponent(){
     
     quoteForm = document.getElementById("quoteForm");
     //Ocultamos boton "Cotizar Ahora"
-    hiddenBtn = document.getElementById("startQuoteBtn");
-    quoteForm.removeChild(hiddenBtn);
+    $("#startQuoteBtn").remove();
     // Cargamos el formulario de publicidades
     selectedCampaignTypeOption = document.getElementById("campaignTypeSelector");
     selectedNameCampaignTypeOption = optionsCampaignList[selectedCampaignTypeOption.selectedIndex];
@@ -58,6 +50,7 @@ function addQuoteComponent(){
     campaignTypeSelector = document.getElementById("campaignTypeSelector");
     campaignTypeSelector.setAttribute("onchange", "updateAdvertisingOption()");
     campaignTypeSelector.disabled = true;
+    quoteComponentLoad();
 }
 
 //Aplicamos JQuery y subida al local storage
@@ -98,4 +91,27 @@ function selectedCampaignOnScreen(){
 
 function selectedSellerOnScreen(){
     return $("#sellerSelector option:selected").text();
+}
+
+function showQuoteTotalScreen(valueQuote){
+    showTotalQuote(valueQuote);
+}
+
+//////// Aqui refactorizo los componentes con Jquery
+
+function startQuoteButtonLoad(){
+    var divStartQuoteButton = $("<div></div>")
+    var startQuoteButton = $("<button></button>");
+
+    divStartQuoteButton.attr("class", "d-flex justify-content-around");
+    startQuoteButton.attr({
+        id: "startQuoteBtn",
+        type: "button",
+        class: "btn btn-primary",
+        onclick: "startQuote()"
+    });
+    startQuoteButton.text("Empezar");
+    divStartQuoteButton.append(startQuoteButton);
+    $("#quoteForm").append(divStartQuoteButton);
+
 }

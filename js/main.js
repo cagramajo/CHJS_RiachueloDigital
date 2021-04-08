@@ -75,5 +75,6 @@ function quote(){
     quoteValue = newCampaign();
     // devolvemos valor final en pantalla
     campaignValueScreen(quoteValue);
-
+    // Agregamos el div correspondiente
+    showQuoteTotalScreen(quoteValue);
 }

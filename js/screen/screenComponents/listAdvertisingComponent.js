@@ -58,7 +58,7 @@ function listAdvertisingComponentLoad(){
     //Boton cotizar en el pie de la lista
     tdFootAdvertising.id = "tdFootAdvertising"
     tdFootAdvertising.scope = "col";
-    tdFootAdvertising.colSpan = "4";
+    tdFootAdvertising.colSpan = "10";
     tdFootAdvertising.className = "text-center"
     quoteButton.type = "button";
     quoteButton.id = "quoteBtn";
