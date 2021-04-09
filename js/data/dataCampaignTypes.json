@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Solo WEB Riachuelo Digital",
+        "description": "Solo podras publicitar en nuestras en nuestra web",
+        "effortFee": 0.05,
+        "baseRate": 1500
+    },
+    {
+        "name": "WEB + Redes Riachiuelo Digital",
+        "description": "Podras publicitar en nuestras en nuestra web y nuestras redes sociales",
+        "effortFee": 0.05,
+        "baseRate": 1500
+    },
+    {
+        "name": "Administramos tus Redes",
+        "description": "Nos dedicamos integramente a tus redes",
+        "effortFee": 0.05,
+        "baseRate": 1500
+    }
+]

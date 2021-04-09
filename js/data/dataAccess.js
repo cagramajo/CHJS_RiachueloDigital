@@ -6,30 +6,42 @@ var frecuencyName = [];
 var temporalItemsQuote = [];
 var itemsCampaign = [];
 var campaigns = [];
+var dataCampaignTypes = [];
 
+function campaignTypeLoaderbyArc(){
+    $.getJSON("../js/data/dataCampaignTypes.json",
+        function (data, textStatus) {
+            campaignTypeList = data;
+            console.log(campaignTypeList);
+        }
+    );
+}
 
 function campaignTypeLoader(){
-    var campaignTypeName = "";
-    var campaignTypeDesc = "";
-    
-    // 1 - Solo publicidad en nuestra WEB
-    campaignTypeName = "Solo WEB Riachuelo Digital"
-    campaignTypeDesc = "Solo podras publicitar en nuestras en nuestra web"
-    var campaignTypeElement = new campaignType(campaignTypeName, campaignTypeDesc);
-    campaignTypeList.push(campaignTypeElement);
-
-    // 2 - Publicidad en nuestra Web y nuestras redes sociales
-    campaignTypeName = "WEB + Redes Riachiuelo Digital"
-    campaignTypeDesc = "Podras publicitar en nuestras en nuestra web y nuestras redes sociales"
-    var campaignTypeElement = new campaignType(campaignTypeName, campaignTypeDesc);
-    campaignTypeList.push(campaignTypeElement);
-
-    // 3 - Administracion de tus redes sociales
-    campaignTypeName = "Administramos tus Redes"
-    campaignTypeDesc = "Nos dedicamos integramente a tus redes"
-    var campaignTypeElement = new campaignType(campaignTypeName, campaignTypeDesc);
-    campaignTypeList.push(campaignTypeElement);
+    campaignTypeLoaderbyArc();
 }
+//     var campaignTypeName = "";
+//     var campaignTypeDesc = "";
+    
+//     // 1 - Solo publicidad en nuestra WEB
+//     campaignTypeName = "Solo WEB Riachuelo Digital"
+//     campaignTypeDesc = "Solo podras publicitar en nuestras en nuestra web"
+//     var campaignTypeElement = new campaignType(campaignTypeName, campaignTypeDesc);
+//     campaignTypeList.push(campaignTypeElement);
+
+//     // 2 - Publicidad en nuestra Web y nuestras redes sociales
+//     campaignTypeName = "WEB + Redes Riachiuelo Digital"
+//     campaignTypeDesc = "Podras publicitar en nuestras en nuestra web y nuestras redes sociales"
+//     var campaignTypeElement = new campaignType(campaignTypeName, campaignTypeDesc);
+//     campaignTypeList.push(campaignTypeElement);
+
+//     // 3 - Administracion de tus redes sociales
+//     campaignTypeName = "Administramos tus Redes"
+//     campaignTypeDesc = "Nos dedicamos integramente a tus redes"
+//     var campaignTypeElement = new campaignType(campaignTypeName, campaignTypeDesc);
+//     campaignTypeList.push(campaignTypeElement);
+//     console.log(campaignTypeList);
+// }
 
 function getCampaignTypeList(){
     return campaignTypeList;

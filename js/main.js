@@ -51,6 +51,7 @@ function initialize(){
     sellerLoader();
     // Cargamos primera seccion
     loadQuoteScreen();
+    campaignTypeLoaderbyArc();
 }
 
 function startQuote(){
