@@ -65,17 +65,19 @@ function addItemQuote(){
     addTemporalItemQuote(itemQuote);
     // agrego item a pantalla
     additemCampaignScreen(itemQuote);
+    //loadingItemCampaig();
 }
 
 function quote(){
 
-    var quoteValue
+    //var quoteValue
     // Pasamos los Items a definitivos
     itemConfirmation();
     // Cremos la campania y calculamos su valor
-    quoteValue = newCampaign();
+    newCampaignQuote(selectedCampaignOnScreen(), selectedSellerOnScreen());
+   //newCampaign();
     // devolvemos valor final en pantalla
     //campaignValueScreen(quoteValue);
     // Agregamos el div correspondiente
-    showQuoteTotalScreen(quoteValue);
+    showQuoteTotalScreen();
 }

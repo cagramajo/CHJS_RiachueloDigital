@@ -41,7 +41,7 @@ function newCampaign(){
     // Obtenemos al vendedor a partir del dato de la pantalla
     var sellerSelected = selectedSellerOnScreen();
     // creamos la campania y devolvemos su cotizaci[on]
-    return newCampaignQuote(campaignTypeSelected, sellerSelected);
+    newCampaignQuote(campaignTypeSelected, sellerSelected);
 
 }
 

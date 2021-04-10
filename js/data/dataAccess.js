@@ -15,7 +15,6 @@ function campaignTypeLoaderbyArc(){
                 Object.setPrototypeOf(element, oCampaignType);
                 campaignTypeList.push(element);
             });
-            console.log(campaignTypeList);
             uploadCampaignType()
         }
     );
@@ -25,7 +24,6 @@ function campaignTypeLoaderbyArc(){
 function uploadCampaignType(){
     var optionsCampaignList = getNameObjetList(campaignTypeList);
     localStorage.setItem("optionsCampaignList", JSON.stringify(optionsCampaignList));
-    console.log(optionsCampaignList);
     loadOptionsCampaignList();
 }
 
@@ -230,6 +228,6 @@ function newCampaignQuote(campaignTypeSelected, sellerSelected){
     campaingQuote = new campaign(campaignType, seller);
     campaingQuote.quote();
     campaigns.push(campaingQuote);
-    return campaingQuote.getTotalQuote();
-
+    localStorage.setItem("totalQuote", campaingQuote.getTotalQuote())
+    //return campaingQuote.getTotalQuote();
 }

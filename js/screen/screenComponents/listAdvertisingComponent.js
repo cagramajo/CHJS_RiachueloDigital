@@ -4,7 +4,6 @@ var advertisingThead = document.createElement("thead");
 var advertisingTfoot = document.createElement("tfoot")
 var listAdvertisingComponentDiv = document.createElement("div");
 var advertisingItemCount = 0;
-
 var listAdvertisingUl = document.createElement("ul");
 
 function listAdvertisingComponentLoad(){
@@ -141,7 +140,6 @@ function addAdvertisingElement(){
     document.getElementById("quoteBtn").disabled = false;
     //$("#advertisingTable").hide();
 }
-
 
 function addAdvertisingElementSlow(){
     var idElem;

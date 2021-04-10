@@ -20,7 +20,7 @@ function loadOptionsCampaignList(){
     optionsCampaignList = JSON.parse(optionsCampaignList);
     $.each(optionsCampaignList, function (indexInArray, valueOfElement) { 
         $("#campaignTypeSelector")
-            .append($("<option>", {valueOfElement : indexInArray})
+            .append($("<option>", {value : indexInArray})
             .text(valueOfElement));
     });
 }
@@ -101,8 +101,8 @@ function selectedSellerOnScreen(){
     return $("#sellerSelector option:selected").text();
 }
 
-function showQuoteTotalScreen(valueQuote){
-    showTotalQuote(valueQuote);
+function showQuoteTotalScreen(){
+    showTotalQuote();
 }
 
 //////// Aqui refactorizo los componentes con Jquery
@@ -111,15 +111,15 @@ function startQuoteButtonLoad(){
     var divStartQuoteButton = $("<div></div>")
     var startQuoteButton = $("<button></button>");
 
-    divStartQuoteButton.attr("class", "d-flex justify-content-around");
-    startQuoteButton.attr({
+    $(divStartQuoteButton).attr("class", "d-flex justify-content-around");
+    $(startQuoteButton).attr({
         id: "startQuoteBtn",
         type: "button",
         class: "btn btn-primary",
         onclick: "startQuote()"
     });
-    startQuoteButton.text("Empezar");
-    divStartQuoteButton.append(startQuoteButton);
+    $(startQuoteButton).text("Empezar");
+    $(divStartQuoteButton).append(startQuoteButton);
     $("#quoteForm").append(divStartQuoteButton);
 
 }
