@@ -8,13 +8,21 @@ var campaignTypeSelector;
 
 // Carga la seccion Tipo de Campaña
 function addCampaignTypeComponent(){
-    //var StartButton;
     var campaignTypeComponent;
-
-    optionsCampaignList = getNameCampaignTypeList();
+    //optionsCampaignList = getNameCampaignTypeList();
     campaignTypeComponent = campaignTypeComponentLoad(optionsCampaignList);
     quoteForm.appendChild(campaignTypeComponent);
     startQuoteButtonLoad();
+}
+
+function loadOptionsCampaignList(){
+    optionsCampaignList = localStorage.getItem("optionsCampaignList");
+    optionsCampaignList = JSON.parse(optionsCampaignList);
+    $.each(optionsCampaignList, function (indexInArray, valueOfElement) { 
+        $("#campaignTypeSelector")
+            .append($("<option>", {valueOfElement : indexInArray})
+            .text(valueOfElement));
+    });
 }
 
 function loadQuoteScreen(){

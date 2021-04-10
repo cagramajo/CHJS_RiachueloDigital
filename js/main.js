@@ -46,12 +46,12 @@ con esos datos se calcula el valor final
 
 function initialize(){
     // Info necesaria
-    campaignTypeLoader();
+    campaignTypeLoaderbyArc();
+    //campaignTypeLoader();
     advertisingLoader();
     sellerLoader();
     // Cargamos primera seccion
     loadQuoteScreen();
-    campaignTypeLoaderbyArc();
 }
 
 function startQuote(){
