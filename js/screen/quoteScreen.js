@@ -50,7 +50,7 @@ function addQuoteComponent(){
     quoteForm.appendChild(advertisingForm);
     // Cargar vendedores
     sellerList = getNameSellerList();
-    sellerComponent = sellerComponentLoad(sellerList);
+    sellerComponent = sellerComponentLoad();
     quoteForm.appendChild(sellerComponent);
     // Cargamos el listado de items publicidad cargados
     advertisingListComponent = listAdvertisingComponentLoad();

@@ -22,8 +22,8 @@ function campaignTypeLoaderbyArc(){
 }
 
 function uploadCampaignType(){
-    var optionsCampaignList = getNameObjetList(campaignTypeList);
-    localStorage.setItem("optionsCampaignList", JSON.stringify(optionsCampaignList));
+    var campaignTypeNameList = getNameObjetList(campaignTypeList);
+    localStorage.setItem("optionsCampaignList", JSON.stringify(campaignTypeNameList));
     loadOptionsCampaignList();
 }
 
@@ -185,6 +185,22 @@ function sellerLoader(){
     var vendedor5 = new seller(sellerName, sellerCommission);
     sellerListObject.push(vendedor5);
 
+}
+
+function sellerLoaderFromAPI() {
+    var oSeller = new seller();
+    $.get("https://my.api.mockaroo.com/seller.json?key=e244da50", function (data, textStatus) {
+            for (let sellerRead of data) {
+                Object.setPrototypeOf(sellerRead, oSeller);
+                sellerListObject.push(sellerRead);
+            }
+            uploadSellerLocalStorage();
+        });
+}
+
+function uploadSellerLocalStorage() {
+    let sellerNameList = getNameObjetList(sellerListObject);
+    localStorage.setItem("listNameSeller", JSON.stringify(sellerNameList));  
 }
 
 function getSellerList(){

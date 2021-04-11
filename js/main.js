@@ -49,7 +49,8 @@ function initialize(){
     campaignTypeLoaderbyArc();
     //campaignTypeLoader();
     advertisingLoader();
-    sellerLoader();
+    //sellerLoader();
+    sellerLoaderFromAPI();
     // Cargamos primera seccion
     loadQuoteScreen();
 }
@@ -70,14 +71,10 @@ function addItemQuote(){
 
 function quote(){
 
-    //var quoteValue
     // Pasamos los Items a definitivos
     itemConfirmation();
-    // Cremos la campania y calculamos su valor
+    // Cremos la campania y se calcula su valor
     newCampaignQuote(selectedCampaignOnScreen(), selectedSellerOnScreen());
-   //newCampaign();
-    // devolvemos valor final en pantalla
-    //campaignValueScreen(quoteValue);
-    // Agregamos el div correspondiente
+    // Mostramos el valor de la cotizacion
     showQuoteTotalScreen();
 }

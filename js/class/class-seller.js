@@ -1,6 +1,10 @@
 class seller{
     constructor(name, commission){
-        this.name = name;
+        this.id;
+        this.first_name = name;
+        this.last_name;
+        this.email;
+        this.gender;
         this.commission = commission;
 
     }
@@ -10,6 +14,6 @@ class seller{
     }
 
     getName = function(){
-        return this.name;
+        return this.first_name;
     }
 }
