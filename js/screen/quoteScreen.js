@@ -59,6 +59,7 @@ function addQuoteComponent(){
     campaignTypeSelector.setAttribute("onchange", "updateAdvertisingOption()");
     campaignTypeSelector.disabled = true;
     quoteComponentLoad();
+    quoteButtonLoad();
 }
 
 //Aplicamos JQuery y subida al local storage
@@ -71,9 +72,8 @@ function getAdvertisingItem(){
         "duration": $("#durationInput").val(),
         "frecuency": $("#frecuencyChangeSelector option:selected").text()
     }
-
     localStorage.setItem ("itemAdvertising",JSON.stringify(itemAdvertisingJSON));
-    return itemAdvertisingJSON
+    //return itemAdvertisingJSON
 }
 
 function additemCampaignScreen(){
@@ -108,7 +108,7 @@ function showQuoteTotalScreen(){
 //////// Aqui refactorizo los componentes con Jquery
 
 function startQuoteButtonLoad(){
-    var divStartQuoteButton = $("<div></div>")
+    var divStartQuoteButton = $("<div></div>");
     var startQuoteButton = $("<button></button>");
 
     $(divStartQuoteButton).attr("class", "d-flex justify-content-around");
@@ -121,5 +121,22 @@ function startQuoteButtonLoad(){
     $(startQuoteButton).text("Empezar");
     $(divStartQuoteButton).append(startQuoteButton);
     $("#quoteForm").append(divStartQuoteButton);
+
+}
+
+function quoteButtonLoad(){
+    var divQuoteButton = $("<div></div>");
+    var quoteButton = $("<button></button>");
+
+    $(divQuoteButton).attr("class", "d-flex justify-content-around");
+    $(quoteButton).attr({
+        id: "quoteBtn",
+        type: "button",
+        class: "btn btn-primary",
+        onclick: "quote()"
+    });
+    $(quoteButton).text("Cotizar");
+    $(divQuoteButton).append(quoteButton);
+    $("#quoteForm").append(divQuoteButton);
 
 }

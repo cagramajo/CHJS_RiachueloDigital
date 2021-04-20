@@ -34,9 +34,13 @@ class campaign{
     quote = function(){
         //calculamos el valor final de la cotizacion.
         var totalItemCampaign = 0;
-        itemsCampaign.forEach(element => {
+        this.itemsCampaign.forEach(element => {
             totalItemCampaign = totalItemCampaign + element.getItemValue();
         });
         this.totalQuote = totalItemCampaign;
+    }
+
+    pushItemCampaign = function(item){
+        this.itemsCampaign.push(item);
     }
 }

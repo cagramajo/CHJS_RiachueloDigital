@@ -6,6 +6,7 @@ var frecuencyName = [];
 var temporalItemsQuote = [];
 var itemsCampaign = [];
 var campaigns = [];
+var campaingQuote;
 
 function campaignTypeLoaderbyArc(){
     var oCampaignType = new campaignType();
@@ -211,39 +212,74 @@ function addTemporalItemQuote(itemQuote){
     temporalItemsQuote.push(itemQuote);
 }
 
-function setItemCampaign(){
-    // Limpiamos el array de items de campaña
-    itemsCampaign = [];
-    // Repetir para todos los items temporales
-    temporalItemsQuote.forEach(element => {
-        // Tomamos un elemento del array
-        var itemCampaign;
+//DEPRECADA
+// function setItemCampaign(){
+//     // Limpiamos el array de items de campaña
+//     itemsCampaign = [];
+//     // Repetir para todos los items temporales
+//     temporalItemsQuote.forEach(element => {
+//         // Tomamos un elemento del array
+//         var itemCampaign;
         
-        // Obtenemos los objetos correspondientes
-        var advertisingElem =  advertisingList.find(elem => elem.getName() == element["advertisingSelector"]);
-        var checkElem = element["designIncludeCheck"];
-        var durationElem = element["duration"];
-        var frecuencyNameElem = frecuencyName.findIndex(elem => elem == element["frecuency"]);
-        var frecuencyElem = frecuencyList[frecuencyNameElem];
-        // Creamos el item campania
-        itemCampaign = new campaignItem(advertisingElem, checkElem, durationElem, frecuencyElem);
-        // Agregamos el item a la campania
-        itemsCampaign.push(itemCampaign);
-        // Calculamos el valor del item
-        itemCampaign.calculateItemCost();
-        // Acumulamos Valor
-    });
-    // Eliminamos Items temporales
-    //temporalItemsQuote = [];
+//         // Obtenemos los objetos correspondientes
+//         var advertisingElem =  advertisingList.find(elem => elem.getName() == element["advertisingSelector"]);
+//         var checkElem = element["designIncludeCheck"];
+//         var durationElem = element["duration"];
+//         var frecuencyNameElem = frecuencyName.findIndex(elem => elem == element["frecuency"]);
+//         var frecuencyElem = frecuencyList[frecuencyNameElem];
+//         // Creamos el item campania
+//         itemCampaign = new campaignItem(advertisingElem, checkElem, durationElem, frecuencyElem);
+//         // Agregamos el item a la campania
+//         itemsCampaign.push(itemCampaign);
+//         // Calculamos el valor del item
+//         itemCampaign.calculateItemCost();
+//         // Acumulamos Valor
+//     });
+//     // Eliminamos Items temporales
+//     //temporalItemsQuote = [];
+// }
+
+function addItem() {
+    var element = JSON.parse(localStorage.getItem("itemAdvertising"));
+    var itemCampaign;
+    //var campaingQuote;
+    // Obtenemos los objetos correspondientes
+    var advertisingElem =  advertisingList.find(elem => elem.getName() == element["advertisingSelector"]);
+    var checkElem = element["designIncludeCheck"];
+    var durationElem = element["duration"];
+    var frecuencyNameElem = frecuencyName.findIndex(elem => elem == element["frecuency"]);
+    var frecuencyElem = frecuencyList[frecuencyNameElem];
+    // Creamos el item campania
+    itemCampaign = new campaignItem(advertisingElem, checkElem, durationElem, frecuencyElem);
+    // Calculamos el valor del item
+    itemCampaign.calculateItemCost();    
+    // Obtengo la cotizacion
+    //campaingQuote = JSON.parse(localStorage.getItem("campaingQuote"));
+    //Object.setPrototypeOf(campaingQuote, new campaign());
+    campaingQuote.pushItemCampaign(itemCampaign);
+    campaingQuote.quote();
+    localStorage.setItem("totalQuote", campaingQuote.getTotalQuote());
+    //localStorage.setItem("campaingQuote", JSON.stringify(campaingQuote));
+
 }
 
+
 function newCampaignQuote(campaignTypeSelected, sellerSelected){
-    var campaingQuote;
     var seller = sellerListObject.find(element => element.getName() == sellerSelected);
     var campaignType = campaignTypeList.find(element => element.getName() == campaignTypeSelected);
     campaingQuote = new campaign(campaignType, seller);
-    campaingQuote.quote();
-    campaigns.push(campaingQuote);
-    localStorage.setItem("totalQuote", campaingQuote.getTotalQuote())
+    //localStorage.setItem("campaingQuote", JSON.stringify(campaingQuote));
+    //campaingQuote.quote();
+    //campaigns.push(campaingQuote);
+    //localStorage.setItem("totalQuote", campaingQuote.getTotalQuote())
     //return campaingQuote.getTotalQuote();
+}
+
+function saveQuote() {
+    var URLPOST = "https://jsonplaceholder.typicode.com/posts";
+    console.log(campaingQuote);
+    $.post(URLPOST, JSON.stringify(campaingQuote), function (data, textStatus){
+        console.log(data);
+    });
+    
 }

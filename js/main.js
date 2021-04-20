@@ -56,25 +56,30 @@ function initialize(){
 }
 
 function startQuote(){
+    // Cargamos los componentes de la pantalla
     addQuoteComponent();
+    // Creamos la campania
+    newCampaign()
 }
 
 function addItemQuote(){
     // obtengo datos de la pantalla > json
-    var itemQuote = getAdvertisingItem();
+    getAdvertisingItem();
     // agrego al array de cotizacion temporal
-    addTemporalItemQuote(itemQuote);
+    //addTemporalItemQuote(itemQuote);
+    addItem();
     // agrego item a pantalla
-    additemCampaignScreen(itemQuote);
+    additemCampaignScreen();
     //loadingItemCampaig();
+    showQuoteTotalScreen();
 }
 
 function quote(){
-
+    saveQuote();
     // Pasamos los Items a definitivos
-    itemConfirmation();
+    //itemConfirmation();
     // Cremos la campania y se calcula su valor
-    newCampaignQuote(selectedCampaignOnScreen(), selectedSellerOnScreen());
+    //newCampaignQuote(selectedCampaignOnScreen(), selectedSellerOnScreen());
     // Mostramos el valor de la cotizacion
-    showQuoteTotalScreen();
+    //showQuoteTotalScreen();
 }

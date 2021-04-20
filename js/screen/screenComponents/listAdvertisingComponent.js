@@ -15,8 +15,8 @@ function listAdvertisingComponentLoad(){
     var thDesignInclude = document.createElement("th");
     var thDuration = document.createElement("th");
     var thFrecuency = document.createElement("th");
-    var tdFootAdvertising = document.createElement("td");
-    var quoteButton = document.createElement("button");
+    // var tdFootAdvertising = document.createElement("td");
+    // var quoteButton = document.createElement("button");
 
     // Identificamos los componentes de la tabla    
     listAdvertisingComponentDiv.className = "col";
@@ -55,24 +55,24 @@ function listAdvertisingComponentLoad(){
     thFrecuency.appendChild(document.createTextNode("Frecuencia de Cambio"));
     trHeadAdvertising.appendChild(thFrecuency);
     //Boton cotizar en el pie de la lista
-    tdFootAdvertising.id = "tdFootAdvertising"
-    tdFootAdvertising.scope = "col";
-    tdFootAdvertising.colSpan = "10";
-    tdFootAdvertising.className = "text-center"
-    quoteButton.type = "button";
-    quoteButton.id = "quoteBtn";
-    quoteButton.className = "btn btn-primary";
-    quoteButton.innerHTML = "Cotizar";
-    quoteButton.setAttribute("onClick", "quote()")
-    quoteButton.disabled = true;
-    tdFootAdvertising.appendChild(quoteButton);
-    trFootAdvertising.appendChild(tdFootAdvertising);
+    // tdFootAdvertising.id = "tdFootAdvertising"
+    // tdFootAdvertising.scope = "col";
+    // tdFootAdvertising.colSpan = "10";
+    // tdFootAdvertising.className = "text-center"
+    // quoteButton.type = "button";
+    // quoteButton.id = "quoteBtn";
+    // quoteButton.className = "btn btn-primary";
+    // quoteButton.innerHTML = "Cotizar";
+    // quoteButton.setAttribute("onClick", "quote()")
+    // quoteButton.disabled = true;
+    // tdFootAdvertising.appendChild(quoteButton);
+    // trFootAdvertising.appendChild(tdFootAdvertising);
 
     advertisingThead.appendChild(trHeadAdvertising);
     advertisingTfoot.appendChild(trFootAdvertising);
     advertisingTable.appendChild(advertisingThead);
     advertisingTable.appendChild(advertisingTbody);
-    advertisingTable.appendChild(advertisingTfoot);
+    //advertisingTable.appendChild(advertisingTfoot);
     //advertisingTable.hidden = true;
 
     listAdvertisingUl.id = "listAdvertising";
@@ -137,7 +137,7 @@ function addAdvertisingElement(){
     //liElement.appendChild(textNode);
     //document.getElementById("listAdvertising").appendChild(liElement);
     document.getElementById("advertisingTbody").appendChild(trAdvertisingFil);
-    document.getElementById("quoteBtn").disabled = false;
+    //document.getElementById("quoteBtn").disabled = false;
     //$("#advertisingTable").hide();
 }
 

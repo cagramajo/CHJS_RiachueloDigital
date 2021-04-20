@@ -31,9 +31,10 @@ function getNameSellerList(){
     return getNameObjetList(getSellerList());
 }
 
-function itemConfirmation(){
-    setItemCampaign();
-}
+//DREPRECADA
+// function itemConfirmation(){
+//     setItemCampaign();
+// }
 
 function newCampaign(){
     // Obtenemos el tipo de campania
